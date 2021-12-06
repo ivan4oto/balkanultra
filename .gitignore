@@ -93,3 +93,4 @@ GitHub.sublime-settings
 
 # NodeJS
 dist/
+node_modules/
