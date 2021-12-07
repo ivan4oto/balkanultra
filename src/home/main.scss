@@ -1,0 +1,18 @@
+@import "../base/custom";
+
+// css here
+
+a.nostyle:link, a.nostyle:visited {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.ultra {
+    background-image: url('https://i.ibb.co/SKPpMrY/ultra.jpg');
+    height: 250px;
+}
+
+.sky {
+    background-image: url('https://i.ibb.co/z80Dc3f/sky.jpg');
+    height: 250px;
+}
