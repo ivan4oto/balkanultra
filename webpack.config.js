@@ -6,7 +6,8 @@ module.exports = {
     mode: 'development',
     entry: {
         base: './src/base/index.js',
-        home: './src/home/index.js'
+        home: './src/home/index.js',
+        checkout: './src/checkout/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

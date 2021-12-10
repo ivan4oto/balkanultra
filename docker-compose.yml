@@ -20,6 +20,7 @@ services:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - PYTHONUNBUFFERED=0
     depends_on:
       - db
     networks:

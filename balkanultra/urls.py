@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import home_view, about_view, results_view, register_view
+from app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +23,9 @@ urlpatterns = [
     path('about', about_view, name='about'),
     path('results/<int:year>', results_view, name='results'),
     path('register/<str:race>', register_view, name='register'),
+    path('success', success_view, name='success'),
+    path('cancel', cancel_view, name='cancel'),
+    path('checkout', checkout_view, name='checkout'),
+    path('create_checkout_session/<str:race>', create_checkout_session_view, name='create_checkout_session'),
+    path('config/', stripe_config),  # new
 ]

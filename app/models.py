@@ -2,14 +2,21 @@ from django.db import models
 
 # Create your models here.
 
-# class UltraAthlete(models.Model):
-#     first_name = models.CharField(max_length=25)
-#     last_name = models.CharField(max_length=25)
-#     phone = models.CharField(max_length=50)
+class UltraAthlete(models.Model):
+    first_name = models.CharField(max_length=25)
+    last_name = models.CharField(max_length=25)
+    phone = models.CharField(max_length=50)
+    email = models.EmailField()
+    gender = models.CharField(max_length=25)
+    paid = models.BooleanField(default=False)
+    first_link = models.URLField(blank=True, null=True)
+    second_link = models.URLField(blank=True, null=True)
 
 
-
-
-# class SkyAthlete(models.Model):
-#     first_name = models.CharField(max_length=25)
-#     last_name = models.CharField(max_length=25)
+class SkyAthlete(models.Model):
+    first_name = models.CharField(max_length=25)
+    last_name = models.CharField(max_length=25)
+    phone = models.CharField(max_length=50)
+    email = models.EmailField()
+    gender = models.CharField(max_length=25)
+    paid = models.BooleanField(default=False)
