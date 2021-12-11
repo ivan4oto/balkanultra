@@ -12,4 +12,8 @@ RUN npm install
 
 COPY . /code/
 
+ADD https://github.com/stripe/stripe-cli/releases/download/v1.7.8/stripe_1.7.8_linux_amd64.deb ./
+
+RUN apt install ./stripe_1.7.8_linux_amd64.deb \
+ && rm ./stripe_1.7.8_linux_amd64.deb
 

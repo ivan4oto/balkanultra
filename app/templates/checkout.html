@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% block head %}
+    <script type="text/javascript">
+      var race = "{{ race }}"
+    </script>
     <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="{% static 'checkout.bundle.js' %}"></script>
@@ -18,5 +21,4 @@
   </section>
 {% endblock %}
 {% block js %}
-
 {% endblock %}

@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from app.views import *
 
 urlpatterns = [
@@ -25,7 +25,6 @@ urlpatterns = [
     path('register/<str:race>', register_view, name='register'),
     path('success', success_view, name='success'),
     path('cancel', cancel_view, name='cancel'),
-    path('checkout', checkout_view, name='checkout'),
-    path('create_checkout_session/<str:race>', create_checkout_session_view, name='create_checkout_session'),
-    path('config/', stripe_config),  # new
+    path('checkout/<str:race>', checkout_view, name='checkout'),
+    path('', include('stripe_app.urls'))
 ]

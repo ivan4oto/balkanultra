@@ -1,5 +1,5 @@
 console.log("Sanity check!");
-
+console.log(race)
 // new
 // Get Stripe publishable key
 fetch("/config/")

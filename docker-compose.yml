@@ -10,7 +10,7 @@ services:
       - djangonet
 
   django:
-    build: .
+    build: ./docker/django
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
@@ -20,7 +20,7 @@ services:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - PYTHONUNBUFFERED=0
+      - PYTHONUNBUFFERED=1
     depends_on:
       - db
     networks:

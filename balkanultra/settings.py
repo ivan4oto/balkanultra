@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'app.apps.AppConfig',
+    'stripe_app.apps.StripeAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,7 +136,7 @@ STATICFILES_DIRS = [
 
 STRIPE_PUBLISHABLE_KEY = "pk_test_51K4TloIv6n82Hb4KGuNvCkn9xVgdmai3kkroDvyMolcq7Ie0zbLHPRCJ6PMitJSyFwvtk2n2KEIUIt7Oup6QNDEy00HwWI6LHg"
 STRIPE_SECRET_KEY = "sk_test_51K4TloIv6n82Hb4KrY6OcDmmxyxDe500U6nTHkz8pn5QAoa9Y4gqwy8Npki0741ec2eGImVJDV9TTnp66xhwI16K00HO2dAkuZ"
-STRIPE_WEBHOOK_SECRET = ""
+STRIPE_WEBHOOK_SECRET = "whsec_3d92WBRzeIOklazD1JNm0qiL22NzcHvo"
 
 PRICE_ULTRA = "price_1K53s6Iv6n82Hb4KoOe1Ek7F"
 PRICE_SKY = "price_1K58XUIv6n82Hb4Km8H0D4be"
