@@ -1,7 +1,9 @@
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
+from app.models import UltraAthlete, SkyAthlete
 import stripe
+import json
 
 # Create your views here.
 
@@ -14,6 +16,8 @@ def stripe_config(request):
 
 @csrf_exempt
 def create_checkout_session_view(request, race):
+    request_body = json.loads(request.body.decode("utf-8"))
+
     if race == 'ultra':
         price = settings.PRICE_ULTRA
     elif race == 'sky':
@@ -30,6 +34,10 @@ def create_checkout_session_view(request, race):
                     'quantity': 1
                 },
             ],
+            metadata = {
+                "race_type": race,
+                "form_mail": request_body.get('form_mail')
+            },
             mode='payment',
             success_url=YOUR_DOMAIN + '/success',
             cancel_url=YOUR_DOMAIN + '/cancel',
@@ -60,7 +68,12 @@ def stripe_webhook(request):
 
     # Handle the checkout.session.completed event
     if event['type'] == 'checkout.session.completed':
-        print("Payment was successful.")
-        # TODO: run some custom code here
+        session = event['data']['object']
+        metadata = session.get('metadata')
+        customer_details = session.get('customer_details')
+        model = UltraAthlete if metadata.get('race') == 'ultra' else SkyAthlete
+        athlete = model.objects.filter(email=metadata.get('form_mail')).first()
+        athlete.payment_mail = customer_details.get('email')
+        athlete.save()
 
     return HttpResponse(status=200)

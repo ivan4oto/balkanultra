@@ -1,5 +1,4 @@
 console.log("Sanity check!");
-console.log(race)
 // new
 // Get Stripe publishable key
 fetch("/config/")
@@ -9,9 +8,18 @@ fetch("/config/")
   const stripe = Stripe(data.publicKey);
   // new
   // Event handler
+  const myData = {
+    form_mail: 'my_email@abv.bg' // get email from form
+  }
   document.querySelector("#submitBtn").addEventListener("click", () => {
     // Get Checkout Session ID
-    fetch(`/create_checkout_session/${race}`)
+    fetch(`/create_checkout_session/${race}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(myData)
+    })
     .then((result) => { return result.json(); })
     .then((data) => {
       console.log(data);
