@@ -2,22 +2,14 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 from app.models import UltraAthlete, SkyAthlete
+from .models import Payment
 import stripe
 import json
-
-# Create your views here.
-
-@csrf_exempt
-def stripe_config(request):
-    if request.method == 'GET':
-        stripe_config = {'publicKey': settings.STRIPE_PUBLISHABLE_KEY}
-        return JsonResponse(stripe_config, safe=False)
 
 
 @csrf_exempt
 def create_checkout_session_view(request, race):
     request_body = json.loads(request.body.decode("utf-8"))
-
     if race == 'ultra':
         price = settings.PRICE_ULTRA
     elif race == 'sky':
@@ -36,7 +28,7 @@ def create_checkout_session_view(request, race):
             ],
             metadata = {
                 "race_type": race,
-                "form_mail": request_body.get('form_mail')
+                "form_mail": request_body.get('email')
             },
             mode='payment',
             success_url=YOUR_DOMAIN + '/success',
@@ -71,9 +63,23 @@ def stripe_webhook(request):
         session = event['data']['object']
         metadata = session.get('metadata')
         customer_details = session.get('customer_details')
-        model = UltraAthlete if metadata.get('race') == 'ultra' else SkyAthlete
+        # Saving the payment to db
+        payment = Payment(
+            payment_mail = session.get('customer_details', None).get('email'),
+            amount_total = session.get('amount_total'),
+            payment_status = session.get('payment_status'),
+            payment_intent = session.get('payment_intent')
+        )
+        payment.save()
+
+        model = UltraAthlete if metadata.get('race_type') == 'ultra' else SkyAthlete
         athlete = model.objects.filter(email=metadata.get('form_mail')).first()
-        athlete.payment_mail = customer_details.get('email')
-        athlete.save()
+        # Adding payment info to athlete if emails match
+        if athlete:
+            athlete.payment_mail = customer_details.get('email')
+            athlete.paid = True
+            athlete.save()
+        
+        return HttpResponse(status=200)
 
     return HttpResponse(status=200)

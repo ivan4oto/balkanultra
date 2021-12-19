@@ -3,6 +3,7 @@ version: "3.9"
 services:
   db:
     image: postgres
+    container_name: db
     restart: always
     volumes:
       - ./data/db:/var/lib/postgresql/data
@@ -10,8 +11,9 @@ services:
       - djangonet
 
   django:
-    build: ./docker/django
-    command: python manage.py runserver 0.0.0.0:8000
+    build: .
+    command: bash -c "python manage.py migrate && 
+                      python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
     ports:
@@ -23,12 +25,15 @@ services:
       - PYTHONUNBUFFERED=1
     depends_on:
       - db
+    links:
+      - db:db
     networks:
       - djangonet
 
 
 networks:
   djangonet:
+    driver: bridge
 
 
      

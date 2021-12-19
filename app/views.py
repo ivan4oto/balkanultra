@@ -1,5 +1,8 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render
+from django.http import JsonResponse
 from .forms import UltraAthleteForm, SkyAthleteForm
+from .models import UltraAthlete, SkyAthlete
+from django.conf import settings
 
 def home_view(request, *args, **kwargs):
     context = {}
@@ -14,25 +17,30 @@ def results_view(request, year):
     return render(request, "results.html", context)
 
 def register_view(request, race):
-    print('hi bro')
-    context = {'race': race}
-    # if this is a POST request we need to process the form data
+    stripe_config = settings.STRIPE_PUBLISHABLE_KEY
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = UltraAthleteForm(request.POST) if race == 'Ultra' else SkyAthleteForm()
-        # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/')
+        model = UltraAthlete if race == 'ultra' else SkyAthlete
+        athlete = model.objects.filter(email=request.POST['email']).first()
+        if athlete:
+            return JsonResponse({
+                "status": "already exists",
+                "email": athlete.email
+            })
 
-    # if a GET (or any other method) we'll create a blank form
+        form = UltraAthleteForm(request.POST) if race == 'Ultra' else SkyAthleteForm(request.POST)
+        if form.is_valid():
+            athlete = form.save()
+            return JsonResponse({
+                "status": "success",
+                "email": athlete.email
+            })
+
     else:
         form = UltraAthleteForm() if race == 'Ultra' else SkyAthleteForm()
 
+    return render(request, "register.html", {'form': form, 'race': race, 'public_key': stripe_config})
 
-    return render(request, "register.html", {'form': form})
+
 
 def checkout_view(request, race):
     return render(request, "checkout.html", {"race": race})

@@ -7,7 +7,8 @@ module.exports = {
     entry: {
         base: './src/base/index.js',
         home: './src/home/index.js',
-        checkout: './src/checkout/index.js'
+        checkout: './src/checkout/index.js',
+        register: './src/register/index.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -19,7 +20,11 @@ module.exports = {
         }),
         new webpack.ProvidePlugin({
             Popper: ['popper.js', 'default']
-        })
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+          })
     ],
     module: {
         rules: [

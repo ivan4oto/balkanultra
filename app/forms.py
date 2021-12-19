@@ -15,13 +15,13 @@ class UltraAthleteForm(forms.ModelForm):
             'second_link'
         ]
         widgets = {
-            'first_name': forms.TextInput(attrs={'class': "form-control"}),
-            'last_name': forms.TextInput(attrs={'class': "form-control"}),
-            'email': forms.EmailInput(attrs={'class': "form-control"}),
-            'phone': forms.TextInput(attrs={'class': "form-control"}),
-            'gender': forms.Select(attrs={'class': 'form-select'}, choices=[(1, 'male'), (2, 'female')]),
-            'first_link': forms.TextInput(attrs={'class': "form-control"}),
-            'second_link': forms.TextInput(attrs={'class': "form-control"}),
+            'first_name': forms.TextInput(attrs={'class': "form-control", 'id': 'post-first-name'}),
+            'last_name': forms.TextInput(attrs={'class': "form-control", 'id': 'post-last-name'}),
+            'email': forms.EmailInput(attrs={'class': "form-control", 'id': 'post-mail'}),
+            'phone': forms.TextInput(attrs={'class': "form-control", 'id': 'post-phone'}),
+            'gender': forms.Select(attrs={'class': 'form-select', 'id': 'post-gender'}, choices=[('male', 'male'), ('female', 'female')]),
+            'first_link': forms.TextInput(attrs={'class': "form-control", 'id': 'post-first-link'}),
+            'second_link': forms.TextInput(attrs={'class': "form-control", 'id': 'post-second-link'}),
         }
 
 class SkyAthleteForm(forms.ModelForm):
