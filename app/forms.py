@@ -27,5 +27,17 @@ class UltraAthleteForm(forms.ModelForm):
 class SkyAthleteForm(forms.ModelForm):
     class Meta:
         model = SkyAthlete
-        fields = []
-        widgets = {}
+        fields = [
+            'first_name',
+            'last_name',
+            'email',
+            'phone',
+            'gender'
+        ]
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': "form-control", 'id': 'post-first-name'}),
+            'last_name': forms.TextInput(attrs={'class': "form-control", 'id': 'post-last-name'}),
+            'email': forms.EmailInput(attrs={'class': "form-control", 'id': 'post-mail'}),
+            'phone': forms.TextInput(attrs={'class': "form-control", 'id': 'post-phone'}),
+            'gender': forms.Select(attrs={'class': 'form-select', 'id': 'post-gender'}, choices=[('male', 'male'), ('female', 'female')])
+        }
