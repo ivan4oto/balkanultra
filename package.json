@@ -13,15 +13,16 @@
   "author": "Ivan Gochev",
   "license": "MIT",
   "devDependencies": {
+    "css-loader": "^2.1.1",
+    "del-cli": "^3.0.1",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^0.23.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
-    "del-cli": "^3.0.1",
-    "webpack-dev-server": "^3.11.0",
-    "mini-css-extract-plugin": "^0.7.0",
-    "css-loader": "^2.1.1",
-    "style-loader": "^0.23.1",
-    "sass-loader": "^7.3.1",
-    "node-sass": "^4.14.1"
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.0",

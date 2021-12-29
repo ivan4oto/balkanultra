@@ -9,6 +9,7 @@ module.exports = {
         home: './src/home/index.js',
         checkout: './src/checkout/index.js',
         register: './src/register/index.js',
+        results: './src/results/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -53,6 +54,18 @@ module.exports = {
             {
                 test: /\.svg$/,
                 loader: "svg-url-loader"
+            },
+            // image loader
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                        esModule: false
+                    }
+                  },
+                ],
             },
         ]
     }

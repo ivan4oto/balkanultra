@@ -1,5 +1,4 @@
 @import "../base/custom";
-
 // css here
 
 a.nostyle:link, a.nostyle:visited {
@@ -8,11 +7,11 @@ a.nostyle:link, a.nostyle:visited {
 }
 
 .ultra {
-    background-image: url('https://i.ibb.co/SKPpMrY/ultra.jpg');
+    background-image: url('./ultra.jpg');
     height: 250px;
 }
 
 .sky {
-    background-image: url('https://i.ibb.co/z80Dc3f/sky.jpg');
+    background-image: url('./sky.jpg');
     height: 250px;
 }
