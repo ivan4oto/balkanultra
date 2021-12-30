@@ -1,0 +1,326 @@
+[
+  {
+     "Ranking":1,
+     "Time":"13:30:31",
+     "Family name":"Пейчев",
+     "First name":"Калоян",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":6
+  },
+  {
+     "Ranking":3,
+     "Time":"13:53:47",
+     "Family name":"Маринов",
+     "First name":"Димитър",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":7
+  },
+  {
+     "Ranking":2,
+     "Time":"13:53:47",
+     "Family name":"Минков",
+     "First name":"Христо",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":34
+  },
+  {
+     "Ranking":4,
+     "Time":"14:14:11",
+     "Family name":"Кръстев",
+     "First name":"Здравко",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":10
+  },
+  {
+     "Ranking":5,
+     "Time":"14:17:21",
+     "Family name":"Геров",
+     "First name":"Иван",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":38
+  },
+  {
+     "Ranking":6,
+     "Time":"16:13:41",
+     "Family name":"Галов",
+     "First name":"Пирин",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":1
+  },
+  {
+     "Ranking":7,
+     "Time":"16:13:41",
+     "Family name":"Дилов",
+     "First name":"Велин",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":5
+  },
+  {
+     "Ranking":8,
+     "Time":"16:13:41",
+     "Family name":"Райчев",
+     "First name":"Павлин",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":51
+  },
+  {
+     "Ranking":9,
+     "Time":"16:39:02",
+     "Family name":"Гичев",
+     "First name":"Христо",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":37
+  },
+  {
+     "Ranking":10,
+     "Time":"17:12:39",
+     "Family name":"Дерменджиев",
+     "First name":"Николай",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":9
+  },
+  {
+     "Ranking":11,
+     "Time":"17:12:39",
+     "Family name":"Цветанова",
+     "First name":"Десислава",
+     "Gender":"F",
+     "Nationality":"BUL",
+     "Bib number":46
+  },
+  {
+     "Ranking":12,
+     "Time":"19:08:49",
+     "Family name":"Николов",
+     "First name":"Никола",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":33
+  },
+  {
+     "Ranking":13,
+     "Time":"19:45:11",
+     "Family name":"Генов",
+     "First name":"Любомир",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":11
+  },
+  {
+     "Ranking":14,
+     "Time":"19:45:11",
+     "Family name":"Ценкуловски",
+     "First name":"Цеци",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":15
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Сидоркин",
+     "First name":"Роман",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":13
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Стоилов",
+     "First name":"Йордан",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":14
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Тодоров",
+     "First name":"Людмил",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":18
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Нинов",
+     "First name":"Симеон",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":19
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Витков",
+     "First name":"Илиан",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":21
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Митков",
+     "First name":"Митко",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":23
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Ризов",
+     "First name":"Методи",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":24
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Трифонов",
+     "First name":"Венцислав",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":26
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Маринов",
+     "First name":"Галин",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":28
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Петков",
+     "First name":"Пламен",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":30
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Бориков",
+     "First name":"Емилиян",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":36
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Колев",
+     "First name":"Мартин",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":39
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Огнянов",
+     "First name":"Михаил",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":41
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Гатев",
+     "First name":"Емил",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":42
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Тончев",
+     "First name":"Милен",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":43
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Тончев",
+     "First name":"Димитър",
+     "Gender":"M",
+     "Nationality":"BUL",
+     "Bib number":44
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Танева",
+     "First name":"Мая",
+     "Gender":"F",
+     "Nationality":"BUL",
+     "Bib number":45
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Николова",
+     "First name":"Соня",
+     "Gender":"F",
+     "Nationality":"BUL",
+     "Bib number":47
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Ралчева",
+     "First name":"Анета",
+     "Gender":"F",
+     "Nationality":"BUL",
+     "Bib number":48
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Ангелова",
+     "First name":"Нели",
+     "Gender":"F",
+     "Nationality":"BUL",
+     "Bib number":49
+  },
+  {
+     "Ranking":"DNF",
+     "Time":"",
+     "Family name":"Малчева",
+     "First name":"Гергана",
+     "Gender":"F",
+     "Nationality":"BUL",
+     "Bib number":50
+  },
+  {
+     "Ranking":"",
+     "Time":"",
+     "Family name":"",
+     "First name":"",
+     "Gender":"",
+     "Nationality":"",
+     "Bib number":""
+  }
+]

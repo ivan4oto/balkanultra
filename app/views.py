@@ -1,8 +1,11 @@
+import json
 from django.shortcuts import render
 from django.http import JsonResponse
 from .forms import UltraAthleteForm, SkyAthleteForm
 from .models import UltraAthlete, SkyAthlete
 from django.conf import settings
+from .services import join_results
+
 
 def home_view(request, *args, **kwargs):
     context = {}
@@ -12,9 +15,19 @@ def about_view(request, *args, **kwargs):
     context = {}
     return render(request, "about.html", context)
 
-def results_view(request, year):
-    context = {'year': year}
-    return render(request, "results.html", context)
+def results_view(request, type):
+    if type == 'all':
+        return render(request, "results.html")
+    elif type == 'json':
+            results = join_results({
+                '2020': ['ultra'],
+                '2021': ['ultra', 'sky']
+            })
+            return JsonResponse(results, safe=False)
+    return JsonResponse({
+        'ala': 'bala'
+    })
+
 
 def register_view(request, race):
     stripe_config = settings.STRIPE_PUBLISHABLE_KEY

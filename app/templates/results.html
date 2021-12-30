@@ -4,9 +4,12 @@
  <link rel='stylesheet' href="{% static 'results.css' %}">
 {% endblock %}
 {% block content %}
-
-<div class='container'><h1> Results for: {{ year }} </h1></div>
-
+{% include 'snippets/results-header.html' %}
+<div class="tab-content">
+  <div class="tab-pane active" id="first" role="tabpanel" aria-labelledby="first-tab"></div>
+  <div class="tab-pane" id="second" role="tabpanel" aria-labelledby="second-tab"></div>
+</div>
+<script src="{% static 'results.bundle.js' %}"></script>
 
 {% endblock %}
 {% block js %}

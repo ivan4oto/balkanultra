@@ -6,6 +6,16 @@ $dark: #370617;
 $navbar-dark-color:  #fcbf49;
 $navbar-dark-hover-color: #eae2b7;
 
+
+#site-logo {
+    background: url('../base/sitelogo.png');
+    height: 50px;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+}
+
+
 // Bootstrap and its default variables
 
 // Optional

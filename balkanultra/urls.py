@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('about', about_view, name='about'),
-    path('results/<int:year>', results_view, name='results'),
+    path('results/<str:type>', results_view, name='results'),
     path('register/<str:race>', register_view, name='register'),
     path('success', success_view, name='success'),
     path('cancel', cancel_view, name='cancel'),
