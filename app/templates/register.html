@@ -9,14 +9,33 @@
         var publicKey = "{{ public_key }}"
     </script>
 {% endblock %}
-{% block content %}
-<div class='container'><h1> Register for </h1></div>
 
-<form id='post-form' method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-light" type='submit'>Sign in</button>
-</form>
+{% block content %}
+
+{% if race == 'Ultra' %}
+<div class="d-flex justify-content-center" id='info-banner-ultra'>
+    <h3 id='info-text'>
+        УЛТРА
+    </h3>
+</div>
+{% else %}
+<div class="d-flex justify-content-center" id='info-banner-sky'>
+    <h3 id='info-text'>
+        СКАЙ
+    </h3>
+</div>
+{% endif %}
+
+
+
+<!-- Register form -->
+<div class='container'>
+    <form id='post-form' method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-light" type='submit'>Sign in</button>
+    </form>
+</div>
 
 {% endblock %}
 {% block js %}

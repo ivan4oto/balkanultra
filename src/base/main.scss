@@ -1,1 +1,10 @@
 @import "custom";
+
+html,body{
+    height: 100%
+}
+
+#holder {
+    min-height: 100%;
+    position: relative;
+}

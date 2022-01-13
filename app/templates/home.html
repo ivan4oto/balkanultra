@@ -4,23 +4,60 @@
  <link rel='stylesheet' href="{% static 'home.css' %}">
 {% endblock %}
 {% block content %}
-<div class="row align-items-md-stretch mt-3">
+<!-- carousel -->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img id='velin' src="https://balkanultra.s3.eu-central-1.amazonaws.com/ultrabanner.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://balkanultra.s3.eu-central-1.amazonaws.com/skybanner.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- small desc -->
+<div class='container'>
+  <div class="d-flex align-items-center flex-column mb-3 mt-2">
+    <h1 class=" display-3">6 - 7 Август 2022</h1>
+    <h4 class=" display-6">Стани част от един от най-трудните за завършване ултра-маратони в България. В сърцето на Централен Балкан!</h4>
+  </div>  
+</div>
+
+<!-- Регистрирай се! -->
+
+
+
+<!-- register banners -->
+<div class="row align-items-md-stretch m-2">
     <div class="col-md-6">
         <a class='nostyle' href="{% url 'register' 'ultra'%}">
-            <div class=" p-5 text-white ultra rounded-3">
+            <div id="ultra" class="p-5 text-white rounded-3">
                 <h1>УЛТРА </h1>
             </div>
         </a>
     </div>
     <div class="col-md-6">
         <a class='nostyle' href="{% url 'register' 'sky'%}">
-            <div class=" p-5 sky border rounded-3">
+            <div id="sky" class="p-5 border rounded-3">
                 <h1>СКАЙРЪН</h1>
-
             </div>
         </a>
     </div>
 </div>
+<script src="{% static 'home.bundle.js' %}"></script>
 {% endblock %}
 {% block js %}
 

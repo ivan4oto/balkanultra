@@ -5,9 +5,13 @@
 {% endblock %}
 {% block content %}
 {% include 'snippets/results-header.html' %}
-<div class="tab-content">
-  <div class="tab-pane active" id="first" role="tabpanel" aria-labelledby="first-tab"></div>
-  <div class="tab-pane" id="second" role="tabpanel" aria-labelledby="second-tab"></div>
+<div class='container'>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="first" role="tabpanel" aria-labelledby="first-tab"></div>
+    <div class="tab-pane" id="second" role="tabpanel" aria-labelledby="second-tab"></div>
+  </div>
+
 </div>
 <script src="{% static 'results.bundle.js' %}"></script>
 
