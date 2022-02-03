@@ -42,6 +42,7 @@ def register_view(request, race):
         form = UltraAthleteForm(request.POST) if race == 'Ultra' else SkyAthleteForm(request.POST)
         if form.is_valid():
             athlete = form.save()
+            athlete.send_mail()
             return JsonResponse({
                 "status": "success",
                 "email": athlete.email

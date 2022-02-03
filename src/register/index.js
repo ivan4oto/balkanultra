@@ -4,6 +4,8 @@ import "./main.scss";
 import "./csfr_cookies";
 import { checkoutRedirect } from "./checkout"
 
+const PAYMENT_ENABLED = false
+
 $('#post-form').on('submit', function(event){
     event.preventDefault();
     console.log("form submitted!")  // sanity check
@@ -20,15 +22,32 @@ function create_post() {
         type: "POST", // http method
         data: get_data(), // data sent with the post request
 
+        beforeSend: function() {
+            toggleLoading()
+        },
+
         success: [
             // checkStatus(json),            
             function(json) {
-            const athleteMail = {
-                email: json["email"]
+                toggleLoading()
+            // If PAYMENT_ENABLED flag is on proceed to checkout
+                if (PAYMENT_ENABLED) {
+                    console.log("success about to redirect"); // another sanity check
+                    const athleteMail = {
+                        email: json["email"]
+                    }
+                    checkoutRedirect(athleteMail)
+                
+                } else {
+                    // If PAYMENT_ENABLED flag is NOT on trigger modal
+                    var myModal = new bootstrap.Modal(document.getElementById('successModal'), {
+                        keyboard: true
+                    })
+                    myModal.show()
+                    console.log('Успешна регистрация')
+                }
             }
-            console.log("success about to redirect"); // another sanity check
-            checkoutRedirect(athleteMail)
-        }],
+        ],
 
         error: function(xhr,errmsg,err) {
             $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
@@ -37,6 +56,19 @@ function create_post() {
         }
     });
 };
+
+
+function toggleLoading() {
+    var submitBtn = $('#submitBtn')
+    var spinner = $('#spinner')
+    if (submitBtn.hasClass('d-none')) {
+        submitBtn.removeClass('d-none')
+        spinner.addClass('d-none')
+    } else {
+        submitBtn.addClass('d-none')
+        spinner.removeClass('d-none')
+    }
+}
 
 function checkStatus(msg){
     var status = msg['status']

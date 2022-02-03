@@ -29,9 +29,10 @@ $(function() {
                     
                     for (let r = 0; r < Object.keys(json[year]).length; r ++) {
                         var race = Object.keys(json[year])[r]
+                        var raceCyrilic = race == 'ultra' ? 'Ултра' : 'Скай'
                         $(`#${years_mapping[y]}`).append(`
-                        <div>
-                        <h3>${race}</h3>
+                        <div class="d-flex justify-content-center">
+                        <h3 id='type-label'>${raceCyrilic}</h3>
                         </div>
                         `)
                         $(`#${years_mapping[y]}`).append(tableHtml)
