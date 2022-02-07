@@ -13,9 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from django.core.management.utils import get_random_secret_key
 from pathlib import Path
 import os
-import sys
-import dj_database_url
-
 
 STRIPE_ENABLED = os.getenv("STRIPE_ENABLED", "False") == "True"
 
@@ -36,7 +33,7 @@ DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 if not DEBUG:
-    ALLOWED_HOSTS = ['.ondigitalocean.app']
+    ALLOWED_HOSTS = ['.ondigitalocean.app', '164.92.236.124']
 
 # Application definition
 
