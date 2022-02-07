@@ -35,7 +35,8 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
-
+if not DEBUG:
+    ALLOWED_HOSTS = ['.ondigitalocean.app']
 
 # Application definition
 
@@ -97,13 +98,19 @@ if DEVELOPMENT_MODE is True:
             
         }
     }
-elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-    if os.getenv("DATABASE_URL", None) is None:
-        raise Exception("DATABASE_URL environment variable not defined")
+else:
     DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
-    }   
-
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'HOST': 'localhost',
+            'PORT': '',
+            'NAME': 'balkanultra',
+            'USER': os.environ.get('DB_USER'),
+            'PASSWORD': os.environ.get('DB_PASSWORD')
+            
+        }
+    }
+    
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
