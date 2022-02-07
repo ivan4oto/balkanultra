@@ -3,3 +3,5 @@ psycopg2>=2.8
 stripe
 gunicorn
 dj-database-url
+django-storages
+boto3

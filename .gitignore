@@ -4,6 +4,7 @@
 *.pyc
 __pycache__
 db.sqlite3
+*.sql
 media
 data/
 migrations/
@@ -93,3 +94,4 @@ GitHub.sublime-settings
 
 # NodeJS
 node_modules/
+

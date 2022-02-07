@@ -6,25 +6,6 @@ a.nostyle:link, a.nostyle:visited {
     color: inherit;
 }
 
-#ultra {
-    background-image: url('./ultra.jpg');
-    height: 250px;
-}
-
-#sky {
-    background-image: url('./sky.jpg');
-    height: 250px;
-}
-
-@media only screen and (max-width: 600px) {
-    #ultra {
-        height: 90px;
-    }
-    
-    #sky {
-        height: 90px;
-    }
-  }
 
 #carouselExampleIndicators {
     box-shadow: -6px 0 white, 6px 0 white, 0 7px 5px -2px rgb(58, 58, 58);

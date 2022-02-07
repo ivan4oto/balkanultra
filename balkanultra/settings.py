@@ -17,6 +17,8 @@ import sys
 import dj_database_url
 
 
+STRIPE_ENABLED = os.getenv("STRIPE_ENABLED", "False") == "True"
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -46,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -85,9 +87,14 @@ WSGI_APPLICATION = 'balkanultra.wsgi.application'
 
 if DEVELOPMENT_MODE is True:
     DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'HOST': 'localhost',
+            'PORT': '5432',
+            'NAME': 'balkanultra',
+            'USER': 'postgres',
+            'PASSWORD': 'docker'
+            
         }
     }
 elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
@@ -135,14 +142,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/dist/'
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = BASE_DIR / "staticfiles-cdn"
 
 STATICFILES_DIRS = [
     BASE_DIR / "dist"
 ]
 
-# STRIPE PAYMENTS
+MEDIA_ROOT = BASE_DIR / "staticfiles-cdn" / "uploads"
 
+
+# STRIPE PAYMENTS
 STRIPE_PUBLISHABLE_KEY = "pk_test_51K4TloIv6n82Hb4KGuNvCkn9xVgdmai3kkroDvyMolcq7Ie0zbLHPRCJ6PMitJSyFwvtk2n2KEIUIt7Oup6QNDEy00HwWI6LHg"
 STRIPE_SECRET_KEY = "sk_test_51K4TloIv6n82Hb4KrY6OcDmmxyxDe500U6nTHkz8pn5QAoa9Y4gqwy8Npki0741ec2eGImVJDV9TTnp66xhwI16K00HO2dAkuZ"
 STRIPE_WEBHOOK_SECRET = "whsec_3d92WBRzeIOklazD1JNm0qiL22NzcHvo"
@@ -161,3 +170,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER  = 'balkanultra.noreply@gmail.com'
 EMAIL_HOST_PASSWORD  = os.environ.get('EMAIL_PASSWORD')
 EMAIL_USE_TLS = True
+
+from .cdn.conf import *
+
+
