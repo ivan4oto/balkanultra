@@ -19,7 +19,8 @@ migrations/
 *.py[cod] 
 *$py.class 
 
-# Distribution / packaging 
+# Distribution / packaging
+dist/ 
 .Python build/ 
 develop-eggs/ 
 downloads/ 

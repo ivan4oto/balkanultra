@@ -16,9 +16,8 @@ const tableHtml = `
 `
 
 $(function() {
-
     $.ajax({
-        url: `http://127.0.0.1:8000/results/json`, // the endpoint
+        url: `http://164.92.236.124:8000/results/json`, // the endpoint
         type: "GET", // http method
         success: [         
             function(json) {
