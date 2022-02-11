@@ -34,7 +34,14 @@ DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 if not DEBUG:
-    ALLOWED_HOSTS = ['.ondigitalocean.app', '164.92.236.124', 'balkan-ultra.com', 'www.balkan-ultra.com']
+    ALLOWED_HOSTS = [
+        '.ondigitalocean.app',
+        '164.92.236.124',
+        'balkan-ultra.com',
+        'www.balkan-ultra.com',
+        '127.0.0.1',
+        'localhost'
+        ]
 
 # Application definition
 
