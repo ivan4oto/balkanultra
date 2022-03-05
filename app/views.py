@@ -67,7 +67,6 @@ def register_view(request, race):
 def athletes_view(request):
     sky_athletes = SkyAthlete.objects.all()
     ultra_athletes = UltraAthlete.objects.all()
-    print([i.first_name for i in sky_athletes])
     return render(request, "athletes.html", {
         'sky_athletes': sky_athletes,
         'ultra_athletes': ultra_athletes
