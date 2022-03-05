@@ -1,4 +1,4 @@
-import "./main.scss"; 
+import "./main.scss"
 
 const tableHtml = `
 <table class="table">
@@ -17,7 +17,7 @@ const tableHtml = `
 
 $(function() {
     $.ajax({
-        url: `http://164.92.236.124:8000/results/json`, // the endpoint
+        url: `http://balkan-ultra.com/results/json`, // the endpoint
         type: "GET", // http method
         success: [         
             function(json) {
@@ -31,7 +31,7 @@ $(function() {
                         var raceCyrilic = race == 'ultra' ? 'Ултра' : 'Скай'
                         $(`#${years_mapping[y]}`).append(`
                         <div class="d-flex justify-content-center">
-                        <h3 id='type-label'>${raceCyrilic}</h3>
+                        <h3 id='type-label' class='mt-2'>${raceCyrilic}</h3>
                         </div>
                         `)
                         $(`#${years_mapping[y]}`).append(tableHtml)

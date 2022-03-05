@@ -1,19 +1,8 @@
 // Your variable overrides
 // $body-bg: $gray-100;
 
-
-$dark: #811805;
-$navbar-dark-color:  #f5edde;
-$navbar-dark-hover-color: #c98c0a;
-
-$primary: #c98c0a;
-
-
 // header.html
 
-#content-container {
-
-}
 
 #body-container {
     min-height: 100%;
@@ -35,6 +24,7 @@ $primary: #c98c0a;
 // Bootstrap and its default variables
 
 // Optional
+@import "./colors";
 @import "~bootstrap/scss/bootstrap";
 // @import "material-icons";
 

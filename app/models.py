@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.mail import send_mail
+from .mail_letters import Letter
 
 # Create your models here.
 
@@ -17,9 +18,15 @@ class UltraAthlete(models.Model):
     def send_mail(self):
         send_mail(
             'Балкан Ултра - успешна регистрация',
-            'Благодарим Ви, че се регистрирахте за Балкан Ултра. Очакваме ви на 06.08 2022',
+            Letter.ULTRA_LETTER.format(
+                f=self.first_name,
+                l=self.last_name,
+                m=self.email,
+                fl=self.first_link,
+                sl=self.second_link
+            ),
             'balkanultra.noreply@gmail.com',
-            [self.email],
+            [self.email, 'balkanultra@abv.bg'],
             fail_silently=False,
         )
 
@@ -39,9 +46,13 @@ class SkyAthlete(models.Model):
     def send_mail(self):
         send_mail(
             'Балкан Ултра - успешна регистрация',
-            'Благодарим Ви, че се регистрирахте за Балкан Ултра. Очакваме ви на 06.08 2022',
+            Letter.SKY_LETTER.format(
+                f=self.first_name,
+                l=self.last_name,
+                m=self.email
+                ),
             'balkanultra.noreply@gmail.com',
-            [self.email],
+            [self.email, 'balkanultra@abv.bg'],
             fail_silently=False,
         )
 

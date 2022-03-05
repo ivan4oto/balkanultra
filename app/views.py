@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_protect
 from django.http import JsonResponse
 from .forms import UltraAthleteForm, SkyAthleteForm
 from .models import UltraAthlete, SkyAthlete
@@ -27,7 +28,7 @@ def results_view(request, type):
         'ala': 'bala'
     })
 
-
+@csrf_protect
 def register_view(request, race):
     stripe_config = settings.STRIPE_PUBLISHABLE_KEY
     if request.method == 'POST':
@@ -42,17 +43,35 @@ def register_view(request, race):
         form = UltraAthleteForm(request.POST) if race == 'Ultra' else SkyAthleteForm(request.POST)
         if form.is_valid():
             athlete = form.save()
-            athlete.send_mail()
+            response = {
+                "status": "success",
+                "email": athlete.email,
+                "mail_status": "success",
+                "mail_error": None
+                }
+            try:
+                athlete.send_mail()
+            except Exception as e:
+                response['mail_status'] = "error"
+                response['mail_error'] = str(e)
             return JsonResponse({
                 "status": "success",
                 "email": athlete.email
             })
-
     else:
         form = UltraAthleteForm() if race == 'Ultra' else SkyAthleteForm()
 
     return render(request, "register.html", {'form': form, 'race': race, 'public_key': stripe_config})
 
+
+def athletes_view(request):
+    sky_athletes = SkyAthlete.objects.all()
+    ultra_athletes = UltraAthlete.objects.all()
+    print([i.first_name for i in sky_athletes])
+    return render(request, "athletes.html", {
+        'sky_athletes': sky_athletes,
+        'ultra_athletes': ultra_athletes
+    })
 
 
 def checkout_view(request, race):

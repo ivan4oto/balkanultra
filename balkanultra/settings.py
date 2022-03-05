@@ -32,7 +32,7 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+# ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 if not DEBUG:
     ALLOWED_HOSTS = [
         '.ondigitalocean.app',
@@ -42,7 +42,12 @@ if not DEBUG:
         '127.0.0.1',
         'localhost'
         ]
-
+else:
+    ALLOWED_HOSTS = [
+        '127.0.0.1',
+        'localhost'
+        '127.0.0.1:8000'
+    ]
 # Application definition
 
 INSTALLED_APPS = [

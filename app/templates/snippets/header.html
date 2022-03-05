@@ -15,12 +15,17 @@
       " id='site-logo'></div>
     </a>
     <ul class="navbar-nav mx-3">
+      <!-- Начало -->
       <li class="nav-item active d-lg-none">
         <a class="nav-link" href="{% url 'home'%}">Начало</a>
       </li>
+
+      <!-- Информация -->
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'about' %}">Информация</a>
       </li>
+
+      <!-- Регистрация -->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Регистрация</a>
         <div class="dropdown-menu" aria-labelledby="dropdown08">
@@ -28,8 +33,15 @@
           <a class="dropdown-item" href="{% url 'register' 'Ultra'%}">Ultra</a>
         </div>
       </li>
+
+      <!-- Резултати -->
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'results' 'all'%}">Резултати</a>
+      </li>
+
+      <!-- Участници -->
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'athletes'%}">Участници</a>
       </li>
     </ul>
   </div>
