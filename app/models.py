@@ -11,7 +11,7 @@ class UltraAthlete(models.Model):
     email = models.EmailField()
     gender = models.CharField(max_length=25)
     paid = models.BooleanField(default=False)
-    payment_mail = models.EmailField()
+    payment_mail = models.EmailField(blank=True, null=True)
     first_link = models.URLField(blank=True, null=True)
     second_link = models.URLField(blank=True, null=True)
 

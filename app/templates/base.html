@@ -20,10 +20,15 @@
           {% block content %}
           {% endblock %}
         </div>
-        <div id='footer-container'>
+        {% comment %} <div id='footer-container'>
           {% include 'snippets/footer.html' %}
-        </div>
+        </div>  {% endcomment %}
     </div>
+    
+    <div id='new-footer'>
+      {% include 'snippets/footer.html' %}
+    </div>
+
     <script src="{% static 'base.bundle.js' %}"></script>
     {% block js %}
     {% endblock %}

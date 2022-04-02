@@ -37,6 +37,7 @@ wheels/
 *.egg 
 *.manifest 
 *.spec 
+staticfiles-cdn/
 
 # Installer logs 
 pip-log.txt 

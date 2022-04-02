@@ -5,19 +5,25 @@
 
 
 #body-container {
-    min-height: 100%;
-    padding: 0 0 100px;
-    position: relative;
+    position:            relative;
+    padding-bottom:      10rem;
+    min-height:          100vh;
 }
 
 #footer-container {
-    bottom: 0;
-    height: 100px;
-    left: 0;
-    position: absolute;
-    width: 100%;
+    bottom:     0;
+    height:     100px;
+    left:       0;
+    position:   absolute;
+    width:      100%;
 }
 
+#new-footer {
+    bottom:             0;
+    position:           absolute;
+    width:              100%;
+    background-color: rgba(172, 189, 183, 0.5)
+}
 
 
 

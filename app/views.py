@@ -66,7 +66,7 @@ def register_view(request, race):
 
 def athletes_view(request):
     sky_athletes = SkyAthlete.objects.all()
-    ultra_athletes = UltraAthlete.objects.all()
+    ultra_athletes = UltraAthlete.objects.all().filter(paid=True)
     return render(request, "athletes.html", {
         'sky_athletes': sky_athletes,
         'ultra_athletes': ultra_athletes
