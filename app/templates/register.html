@@ -20,33 +20,40 @@
     {% if race == 'Ultra' %}
     <div class="d-flex justify-content-center" id='info-banner-ultra'>
         <h3 id='info-text' class='my-2'>
-            УЛТРА
+            ULTRA
         </h3>
     </div>
     {% else %}
     <div class="d-flex justify-content-center" id='info-banner-sky'>
         <h3 id='info-text' class='my-2'>
-            СКАЙ
+            SKY
         </h3>
     </div>
     {% endif %}
 </div>
 
 <!-- Card with info about registration -->
-{% include 'cards/register-ultra.html' %}
-
-<!-- Register form -->
-<div class='container'>
-    <form id='post-form' method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <div id='spinner' class="spinner-border text-dark d-none" role="status">
-            <span class="sr-only"></span>
-        </div>
-        <button id='submitBtn'class="btn btn-light" type='submit'>Sign in</button>
-    </form>
+<div class='mt-2'>
+{% if race == 'Ultra' %}
+    {% include 'cards/register-ultra.html' %}
+{% else %}
+    {% include 'cards/register-sky.html' %}
+{% endif %}
 </div>
 
+<!-- Register form -->
+<div class='container mt-2'>
+    <div class='reg-form'>
+        <form id='post-form' method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div id='spinner' class="spinner-border text-dark d-none" role="status">
+                <span class="sr-only"></span>
+            </div>
+            <button id='submitBtn'class="btn btn-light" type='submit'>Sign in</button>
+        </form>
+    </div>
+</div>
 {% endblock %}
 {% block js %}
 <script src="{% static 'register.bundle.js' %}"></script>

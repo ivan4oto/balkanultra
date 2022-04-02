@@ -1,8 +1,9 @@
-// Submit post on submit
+
 // CSS
 import "./main.scss"; 
-import { Modal } from "bootstrap"
-// import 'bootstrap'; 
+// JS
+import "./style_moder"
+import Modal from "bootstrap/js/dist/modal"
 // import "./csfr_cookies";
 // import { checkoutRedirect } from "./checkout"
 

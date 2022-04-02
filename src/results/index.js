@@ -14,7 +14,7 @@ const tableHtml = `
     </tbody>
 </table>
 `
-
+console.log('results in < ---')
 $(function() {
     $.ajax({
         url: `http://balkan-ultra.com/results/json`, // the endpoint
