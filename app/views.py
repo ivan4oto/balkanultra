@@ -51,7 +51,6 @@ def register_view(request, race):
                 "mail_error": None,
                 'mail_response': None,
                 'debug': [settings.MAILJET_API_KEY, settings.MAILJET_API_SECRET, os.environ.get('MAILJET_API_KEY')],
-                'all': os.environ
                 }
             try:
                 mail_result = athlete.send_mail()
