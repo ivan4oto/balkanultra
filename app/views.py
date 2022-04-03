@@ -48,7 +48,8 @@ def register_view(request, race):
                 "email": athlete.email,
                 "mail_status": "success",
                 "mail_error": None,
-                'mail_response': None
+                'mail_response': None,
+                'debug': [settings.MAILJET_API_KEY, settings.MAILJET_API_SECRET]
                 }
             try:
                 mail_result = athlete.send_mail()
