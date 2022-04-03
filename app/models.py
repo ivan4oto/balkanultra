@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.mail import send_mail
 from .mail_letters import Letter
+from .services import Mailjet_Letter_Service
 
 # Create your models here.
 
@@ -16,18 +17,9 @@ class UltraAthlete(models.Model):
     second_link = models.URLField(blank=True, null=True)
 
     def send_mail(self):
-        send_mail(
-            'Балкан Ултра - успешна регистрация',
-            Letter.ULTRA_LETTER.format(
-                f=self.first_name,
-                l=self.last_name,
-                m=self.email,
-                fl=self.first_link,
-                sl=self.second_link
-            ),
-            'balkanultra.noreply@gmail.com',
-            [self.email, 'balkanultra@abv.bg'],
-            fail_silently=False,
+        Mailjet_Letter_Service().send_letter(
+            self.email, self.first_name, self.last_name, self.first_link,
+            self.second_link, 'ultra'
         )
 
     def __str__(self):
@@ -44,17 +36,12 @@ class SkyAthlete(models.Model):
     payment_mail = models.EmailField()
 
     def send_mail(self):
-        send_mail(
-            'Балкан Ултра - успешна регистрация',
-            Letter.SKY_LETTER.format(
-                f=self.first_name,
-                l=self.last_name,
-                m=self.email
-                ),
-            'balkanultra.noreply@gmail.com',
-            [self.email, 'balkanultra@abv.bg'],
-            fail_silently=False,
+        Mailjet_Letter_Service().send_letter(
+            self.email, self.first_name, self.last_name, None,
+            None, 'ultra'
         )
+
+
 
     def __str__(self):
         return str(self.first_name) + ' ' + str(self.last_name)

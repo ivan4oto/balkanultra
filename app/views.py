@@ -60,7 +60,13 @@ def register_view(request, race):
     else:
         form = UltraAthleteForm() if race == 'Ultra' else SkyAthleteForm()
 
-    return render(request, "register.html", {'form': form, 'race': race, 'public_key': stripe_config})
+    return render(request, "register.html", {
+        'form': form,
+        'race': race,
+        'public_key': stripe_config,
+        'scheme': request.scheme,
+        'host': request.get_host()
+    })
 
 
 def athletes_view(request):

@@ -7,6 +7,8 @@ import Modal from "bootstrap/js/dist/modal"
 // import "./csfr_cookies";
 // import { checkoutRedirect } from "./checkout"
 
+
+
 function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -43,7 +45,7 @@ $('#post-form').on('submit', function(event){
     event.preventDefault();
     // create_post();
     $.ajax( {
-        url: `https://balkan-ultra.com/register/${race}`,
+        url: `${scheme}://${host}/register/${race}`,
         type: "POST",
         beforeSend: function(request) {
             request.setRequestHeader("X-CSRFToken", csrftoken)

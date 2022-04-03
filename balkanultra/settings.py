@@ -182,11 +182,14 @@ PRICE_SKY = "price_1K58XUIv6n82Hb4Km8H0D4be"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'in-v3.mailjet.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER  = 'balkanultra.noreply@gmail.com'
 EMAIL_HOST_PASSWORD  = os.environ.get('EMAIL_PASSWORD')
 EMAIL_USE_TLS = True
+
+MAILJET_API_KEY = os.environ.get('MAILJET_API_KEY')
+MAILJET_API_SECRET = os.environ.get('MAILJET_API_SECRET')
 
 from .cdn.conf import *
 
