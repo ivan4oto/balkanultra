@@ -5,6 +5,7 @@ from .forms import UltraAthleteForm, SkyAthleteForm
 from .models import UltraAthlete, SkyAthlete
 from django.conf import settings
 from .services import join_results
+import os
 
 
 def home_view(request, *args, **kwargs):
@@ -49,7 +50,8 @@ def register_view(request, race):
                 "mail_status": "success",
                 "mail_error": None,
                 'mail_response': None,
-                'debug': [settings.MAILJET_API_KEY, settings.MAILJET_API_SECRET]
+                'debug': [settings.MAILJET_API_KEY, settings.MAILJET_API_SECRET, os.environ.get('MAILJET_API_KEY')],
+                'all': os.environ
                 }
             try:
                 mail_result = athlete.send_mail()
