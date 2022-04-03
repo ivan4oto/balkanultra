@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from django.core.management.utils import get_random_secret_key
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 STRIPE_ENABLED = os.getenv("STRIPE_ENABLED", "False") == "True"
 

@@ -6,3 +6,4 @@ dj-database-url
 django-storages
 boto3
 mailjet-rest
+python-dotenv
