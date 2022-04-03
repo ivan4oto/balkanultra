@@ -54,10 +54,9 @@ def register_view(request, race):
             except Exception as e:
                 response['mail_status'] = "error"
                 response['mail_error'] = str(e)
-            return JsonResponse({
-                "status": "success",
-                "email": athlete.email
-            })
+            return JsonResponse(
+                response
+            )
     else:
         form = UltraAthleteForm() if race == 'Ultra' else SkyAthleteForm()
 

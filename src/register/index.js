@@ -43,7 +43,7 @@ $('#post-form').on('submit', function(event){
     event.preventDefault();
     // create_post();
     $.ajax( {
-        url: `http://127.0.0.1:8000/register/${race}`,
+        url: `https://balkan-ultra.com/register/${race}`,
         type: "POST",
         beforeSend: function(request) {
             request.setRequestHeader("X-CSRFToken", csrftoken)
@@ -63,8 +63,9 @@ $('#post-form').on('submit', function(event){
                 
                 } else {
                     // If PAYMENT_ENABLED flag is NOT on trigger modal
-                    showModal()
-                    console.log('Успешна регистрация')
+                    showModal(json);
+                    console.log('Успешна регистрация');
+                    console.log(json)
                 }
             }
         ],
@@ -89,9 +90,26 @@ function toggleLoading() {
     }
 }
 
-function showModal() {
-    var myModal = new Modal(document.getElementById('successModal'), {
-        keyboard: true
-    })
+function showModal(json) {
+    if (json['mail_status'] == 'success' && json['status'] == 'success') {
+        var myModal = new Modal(document.getElementById('successModal'), {
+            keyboard: true
+        })
+    } else {
+        var myModal = new Modal(document.getElementById('errorModal'), {
+            keyboard: true
+        })
+        addErrorMsg(json)
+    }
     myModal.show()
+}
+
+function addErrorMsg(json) {
+    var errorMsg = json['mail_error']
+    if (json['status'] == 'already exists') {
+        errorMsg = 'Този email е вече регистриран, моля използвайте друг email.'
+    }
+    var errorMsgField = document.getElementById('errorMsgField')
+    var text = document.createTextNode(`${errorMsg}`);
+    errorMsgField.appendChild(text);
 }
