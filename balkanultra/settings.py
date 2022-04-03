@@ -13,16 +13,19 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from django.core.management.utils import get_random_secret_key
 from pathlib import Path
 import os
-from dotenv import load_dotenv
+import environ
 
-load_dotenv()
-
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
 STRIPE_ENABLED = os.getenv("STRIPE_ENABLED", "False") == "True"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+MAILJET_API_KEY = env('MAILJET_API_KEY')
+MAILJET_API_SECRET = env('MAILJET_API_SECRET')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -190,9 +193,6 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER  = 'balkanultra.noreply@gmail.com'
 EMAIL_HOST_PASSWORD  = os.environ.get('EMAIL_PASSWORD')
 EMAIL_USE_TLS = True
-
-MAILJET_API_KEY = os.environ.get('MAILJET_API_KEY')
-MAILJET_API_SECRET = os.environ.get('MAILJET_API_SECRET')
 
 from .cdn.conf import *
 
