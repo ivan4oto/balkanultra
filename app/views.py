@@ -47,10 +47,13 @@ def register_view(request, race):
                 "status": "success",
                 "email": athlete.email,
                 "mail_status": "success",
-                "mail_error": None
+                "mail_error": None,
+                'mail_response': None
                 }
             try:
-                athlete.send_mail()
+                mail_result = athlete.send_mail()
+                response['mail_response'] = mail_result.json()
+
             except Exception as e:
                 response['mail_status'] = "error"
                 response['mail_error'] = str(e)

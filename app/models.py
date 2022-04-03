@@ -17,10 +17,11 @@ class UltraAthlete(models.Model):
     second_link = models.URLField(blank=True, null=True)
 
     def send_mail(self):
-        Mailjet_Letter_Service().send_letter(
+        result = Mailjet_Letter_Service().send_letter(
             self.email, self.first_name, self.last_name, self.first_link,
             self.second_link, 'ultra'
         )
+        return result
 
     def __str__(self):
         return str(self.first_name) + ' ' + str(self.last_name)
@@ -36,11 +37,11 @@ class SkyAthlete(models.Model):
     payment_mail = models.EmailField()
 
     def send_mail(self):
-        Mailjet_Letter_Service().send_letter(
+        result = Mailjet_Letter_Service().send_letter(
             self.email, self.first_name, self.last_name, None,
             None, 'ultra'
         )
-
+        return result
 
 
     def __str__(self):
