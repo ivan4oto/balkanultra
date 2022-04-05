@@ -19,9 +19,9 @@ class UltraAthleteForm(forms.ModelForm):
             'last_name': forms.TextInput(attrs={'class': "form-control", 'id': 'post-last-name','placeholder': 'Фамилия'}),
             'email': forms.EmailInput(attrs={'class': "form-control", 'id': 'post-mail', 'placeholder': 'Имеил'}),
             'phone': forms.TextInput(attrs={'class': "form-control", 'id': 'post-phone', 'placeholder': 'Телефон'}),
-            'gender': forms.Select(attrs={'class': 'form-select', 'id': 'post-gender'}, choices=[('male', 'male'), ('female', 'female')]),
-            'first_link': forms.TextInput(attrs={'class': "form-control", 'id': 'post-first-link', 'placeholder': 'Линк 1'}),
-            'second_link': forms.TextInput(attrs={'class': "form-control", 'id': 'post-second-link', 'placeholder': 'Линк 2'}),
+            'gender': forms.Select(attrs={'class': 'form-select', 'id': 'post-gender'}, choices=[('male', 'Мъж'), ('female', 'Жена')]),
+            'first_link': forms.TextInput(attrs={'class': "form-control", 'id': 'post-first-link', 'placeholder': 'Линк към състезание'}),
+            'second_link': forms.TextInput(attrs={'class': "form-control", 'id': 'post-second-link', 'placeholder': 'Втори линк към състезание'}),
         }
 
 class SkyAthleteForm(forms.ModelForm):
@@ -39,5 +39,5 @@ class SkyAthleteForm(forms.ModelForm):
             'last_name': forms.TextInput(attrs={'class': "form-control", 'id': 'post-last-name', 'placeholder': 'Фамилия'}),
             'email': forms.EmailInput(attrs={'class': "form-control", 'id': 'post-mail','placeholder': 'Имеил'}),
             'phone': forms.TextInput(attrs={'class': "form-control", 'id': 'post-phone','placeholder': 'Телефон'}),
-            'gender': forms.Select(attrs={'class': 'form-select', 'id': 'post-gender'}, choices=[('male', 'male'), ('female', 'female')])
+            'gender': forms.Select(attrs={'class': 'form-select', 'id': 'post-gender'}, choices=[('male', 'Мъж'), ('female', 'Жена')])
         }

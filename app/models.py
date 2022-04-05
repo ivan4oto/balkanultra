@@ -13,8 +13,8 @@ class UltraAthlete(models.Model):
     gender = models.CharField(max_length=25)
     paid = models.BooleanField(default=False)
     payment_mail = models.EmailField(blank=True, null=True)
-    first_link = models.URLField(blank=True, null=True)
-    second_link = models.URLField(blank=True, null=True)
+    first_link = models.URLField(blank=False, null=True)
+    second_link = models.URLField(blank=False, null=True)
 
     def send_mail(self):
         result = Mailjet_Letter_Service().send_letter(
@@ -34,7 +34,7 @@ class SkyAthlete(models.Model):
     email = models.EmailField()
     gender = models.CharField(max_length=25)
     paid = models.BooleanField(default=False)
-    payment_mail = models.EmailField()
+    payment_mail = models.EmailField(blank=True, null=True)
 
     def send_mail(self):
         result = Mailjet_Letter_Service().send_letter(
