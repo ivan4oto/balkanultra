@@ -1,0 +1,21 @@
+@import "../base/colors";
+
+
+#ultra-header {
+    color: $dark;
+}
+
+#sky-header {
+    color: $sky;
+}
+
+body {
+    background-image: url('https://balkanultra.s3.eu-central-1.amazonaws.com/images/tabela.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.table-bg {
+    background-color: rgba(255, 255, 255, 0.8);
+}

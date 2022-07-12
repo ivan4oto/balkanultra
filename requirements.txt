@@ -1,3 +1,9 @@
 Django>=3.0,<4.0
 psycopg2>=2.8
 stripe
+gunicorn
+dj-database-url
+django-storages
+boto3
+mailjet-rest
+django-environ
