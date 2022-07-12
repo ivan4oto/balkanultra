@@ -1,6 +1,6 @@
 <div class='border-bottom my-2'>
     <div class="d-grid gap-2">
-        <a href="https://balkanultra.fra1.digitaloceanspaces.com/media/BU_sky.gpx" download target="_blank">
+        <a href="{% url 'download' 'sky'%}" download target="_blank">
             <button class="btn btn-primary" type="button">СВАЛИ GPX SKY</button>
         </a>
     </div>
@@ -14,7 +14,7 @@
 
 <div class=''>
     <div class="d-grid gap-2">
-        <a href="https://balkanultra.fra1.digitaloceanspaces.com/media/BU.gpx" download target="_blank">
+        <a href="{% url 'download' 'ultra'%}" download target="_blank">
             <button class="btn btn-dark" type="button">СВАЛИ GPX ULTRA</button>
         </a>
     </div>

@@ -1,4 +1,9 @@
+from ast import Bytes
+from io import BytesIO
 import json
+
+import requests
+
 from .mail_letters import Letter
 from mailjet_rest import Client
 from django.conf import settings
@@ -58,6 +63,22 @@ class Mailjet_Letter_Service():
         }
 
         result = self.mailjet.send.create(data=data)
-        print(result.json())
-        print(result.status_code)
         return result
+
+
+def get_gpx_file(race: str) -> BytesIO:
+    f = None
+    print(race)
+    if race == 'ultra':
+        r = requests.get(settings.ULTRA_GPX_LINK)
+        f = BytesIO(r.content)
+        print(f)
+    elif race == 'sky':
+        r = requests.get(settings.SKY_GPX_LINK)
+        f = BytesIO(r.content)
+
+    return f
+
+
+
+

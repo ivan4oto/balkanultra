@@ -3,11 +3,36 @@
 
 // header.html
 
+#testdiv {
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+@media all and (min-width:100px) and (max-width: 321px){
+    .test-size {
+        width: 40px;
+        height: auto;
+    }
+}
+
+@media all and (min-width:321px) and (max-width: 550px){
+    .test-size {
+        width: 70px;
+        height: auto;
+    }
+}
+
+
+@media all and (min-width:550px) and (max-width: 800px){
+    .test-size {
+        width: 90px;
+        height: auto;
+    }
+}
 
 #body-container {
     position:            relative;
-    padding-bottom:      10rem;
-    min-height:          100vh;
 }
 
 #footer-container {
@@ -20,11 +45,27 @@
 
 #new-footer {
     bottom:             0;
-    position:           absolute;
+    position:           relative;
     width:              100%;
     background-color: rgba(172, 189, 183, 0.5)
 }
 
+#footer2022 {
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.col2022 {
+    height: 70px;
+}
+
+.img2022 {
+    max-height: 100%;
+    margin: auto;
+    display: block;
+}
 
 
 // Bootstrap and its default variables

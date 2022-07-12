@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_protect
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 from .forms import UltraAthleteForm, SkyAthleteForm
 from .models import UltraAthlete, SkyAthlete
 from django.conf import settings
-from .services import join_results
+from .services import join_results, get_gpx_file
 import os
+import requests
 
 
 def home_view(request, *args, **kwargs):
@@ -80,6 +81,15 @@ def athletes_view(request):
         'sky_athletes': sky_athletes,
         'ultra_athletes': ultra_athletes
     })
+
+
+def download_gpx_view(request, race):
+    f = get_gpx_file(race)
+    response = HttpResponse(f.read(), content_type="image/svg+xml")
+    response['Content-Disposition'] = 'inline; filename=' + 'balkan_' + race + '.gpx'
+
+    return response
+
 
 
 def checkout_view(request, race):

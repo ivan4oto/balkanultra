@@ -194,6 +194,10 @@ EMAIL_HOST_USER  = 'balkanultra.noreply@gmail.com'
 EMAIL_HOST_PASSWORD  = os.environ.get('EMAIL_PASSWORD')
 EMAIL_USE_TLS = True
 
+SKY_GPX_LINK = "https://balkanultra.fra1.digitaloceanspaces.com/media/BU_sky.gpx"
+ULTRA_GPX_LINK = "https://balkanultra.fra1.digitaloceanspaces.com/media/BU.gpx"
+
+
 from .cdn.conf import *
 
 

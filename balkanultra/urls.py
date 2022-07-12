@@ -23,6 +23,7 @@ urlpatterns = [
     path('about', about_view, name='about'),
     path('results/<str:type>', results_view, name='results'),
     path('register/<str:race>', register_view, name='register'),
+    path('download/<str:race>', download_gpx_view, name='download'),
     path('athletes', athletes_view, name='athletes'),
     path('success', success_view, name='success'),
     path('cancel', cancel_view, name='cancel'),
