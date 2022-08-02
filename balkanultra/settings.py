@@ -197,6 +197,8 @@ EMAIL_USE_TLS = True
 SKY_GPX_LINK = "https://balkanultra.fra1.digitaloceanspaces.com/media/BU_sky.gpx"
 ULTRA_GPX_LINK = "https://balkanultra.fra1.digitaloceanspaces.com/media/BU.gpx"
 
+REGISTRATION_ENABLED = False
+
 
 from .cdn.conf import *
 

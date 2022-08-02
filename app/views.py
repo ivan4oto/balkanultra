@@ -32,6 +32,9 @@ def results_view(request, type):
 
 @csrf_protect
 def register_view(request, race):
+    if not settings.REGISTRATION_ENABLED:
+        return render(request, "disabled_register.html")
+
     stripe_config = settings.STRIPE_PUBLISHABLE_KEY
     if request.method == 'POST':
         model = UltraAthlete if race == 'ultra' else SkyAthlete
