@@ -88,8 +88,8 @@ def athletes_view(request):
 
 def download_gpx_view(request, race):
     f = get_gpx_file(race)
-    response = HttpResponse(f.read(), content_type="image/svg+xml")
-    response['Content-Disposition'] = 'inline; filename=' + 'balkan_' + race + '.gpx'
+    response = HttpResponse(f.read(), content_type="application/gpx+xml")
+    response['Content-Disposition'] = 'inline; filename=' + 'balkan_' + race
 
     return response
 
