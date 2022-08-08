@@ -4,71 +4,84 @@
  <link rel='stylesheet' href="{% static 'about.css' %}">
 {% endblock %}
 {% block content %}
+<div class='about-background'>
+  <div class='container pb-5'>
+    <figure class="text-center text-danger">
+      <blockquote class="blockquote">
+        <h1 class="display-5">Балкан Ултра</h1
+      </blockquote>
+      <figcaption class="blockquote-footer text-danger">
+        Тука трябваше да сложим някакъв надъхващ <cite title="Source Title">цитат!</cite> 
+      </figcaption>
+    </figure>
+    {% comment %} <h1 class="display-3">Балкан Ултра</h1> {% endcomment %}
+  
 
-<div class='container'>
-  <figure class="text-center">
-    <blockquote class="blockquote">
-      <h1 class="display-5">Балкан Ултра</h1
-    </blockquote>
-    <figcaption class="blockquote-footer">
-      Тука трябваше да сложим някакъв надъхващ <cite title="Source Title">цитат!</cite>
-    </figcaption>
-  </figure>
-  {% comment %} <h1 class="display-3">Балкан Ултра</h1> {% endcomment %}
- 
+    <div class="accordion accordion-flush" id="accordionFlushExample">
 
-  <div class="accordion accordion-flush" id="accordionFlushExample">
-
-    <!-- Условия за участие -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingOne">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-          Условия за участие
-        </button>
-      </h2>
-      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">{% include 'snippets/about/requirements.html' %}</div>
+      <!-- Условия за участие -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Условия за участие
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">{% include 'snippets/about/requirements.html' %}</div>
+        </div>
       </div>
-    </div>
 
-    <!-- Трасе и профил -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-          Трасе и профил
-        </button>
-      </h2>
-      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">{% include 'snippets/about/route.html' %}</div>
+      <!-- Трасе и профил -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Трасе и профил
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">{% include 'snippets/about/route.html' %}</div>
+        </div>
       </div>
-    </div>
 
-    <!-- Настаняване -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-          Настаняване
-        </button>
-      </h2>
-      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">{% include 'snippets/about/accomodation.html' %}</div>
+      <!-- Настаняване -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Настаняване
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">{% include 'snippets/about/accomodation.html' %}</div>
+        </div>
       </div>
-    </div>
 
-    <!-- Задължителна екипировка -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingFour">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-          Задължителна екипировка и правила
-        </button>
-      </h2>
-      <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">{% include 'snippets/about/gear.html' %}</div>
+      <!-- Задължителна екипировка -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            Задължителна екипировка и правила
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">{% include 'snippets/about/gear.html' %}</div>
+        </div>
       </div>
+
+      <!-- Програма -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+            Програма
+          </button>
+        </h2>
+        <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">{% include 'snippets/about/program.html' %}</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
-
 
 {% endblock %}
 {% block js %}

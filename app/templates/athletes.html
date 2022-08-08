@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <link rel='stylesheet' href="{% static 'athletes.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class='container'>
+    
+    <!-- sky table -->
+    <div class="d-flex justify-content-center mt-2">
+        <h2 id='sky-header'> SKY </h2>
+    </div>
+    <table class="table table-hover table-bg">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Име</th>
+            <th scope="col">Фамилия</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for athlete in sky_athletes %}
+            <tr class='table'>
+                <th scope="row"></th>
+                <td>{{ athlete.first_name }}</td>
+                <td>{{ athlete.last_name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- ultra table -->
+    <div class="d-flex justify-content-center mt-2">
+        <h2 id='ultra-header'> ULTRA </h2>
+    </div>
+    <table class="table table-hover table-bg">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Име</th>
+            <th scope="col">Фамилия</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for athlete in ultra_athletes %}
+            <tr class='table'>
+                <th scope="row"></th>
+                <td>{{ athlete.first_name }}</td>
+                <td>{{ athlete.last_name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+<div id='tabelata'></div>
+{% endblock %}
+{% block js %}
+<script src="{% static 'athletes.bundle.js' %}"></script>
+{% endblock %}

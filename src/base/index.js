@@ -1,7 +1,7 @@
-// import { Dropdown } from "bootstrap";
-// import { Tab } from "bootstrap";
+import { Dropdown } from "bootstrap";
+import { Tab } from "bootstrap";
 import "./main.scss";
-import 'bootstrap'; 
+// import 'bootstrap'; 
 // import Logo from './sitelogo.png';
 
 

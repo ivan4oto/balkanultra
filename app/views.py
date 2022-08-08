@@ -1,9 +1,12 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_protect
+from django.http import HttpResponse, JsonResponse
 from .forms import UltraAthleteForm, SkyAthleteForm
 from .models import UltraAthlete, SkyAthlete
 from django.conf import settings
-from .services import join_results
+from .services import join_results, get_gpx_file
+import os
+import requests
 
 
 def home_view(request, *args, **kwargs):
@@ -27,8 +30,11 @@ def results_view(request, type):
         'ala': 'bala'
     })
 
-
+@csrf_protect
 def register_view(request, race):
+    if not settings.REGISTRATION_ENABLED:
+        return render(request, "disabled_register.html")
+
     stripe_config = settings.STRIPE_PUBLISHABLE_KEY
     if request.method == 'POST':
         model = UltraAthlete if race == 'ultra' else SkyAthlete
@@ -42,16 +48,50 @@ def register_view(request, race):
         form = UltraAthleteForm(request.POST) if race == 'Ultra' else SkyAthleteForm(request.POST)
         if form.is_valid():
             athlete = form.save()
-            athlete.send_mail()
-            return JsonResponse({
+            response = {
                 "status": "success",
-                "email": athlete.email
-            })
+                "email": athlete.email,
+                "mail_status": "success",
+                "mail_error": None,
+                'mail_response': None,
+                }
+            try:
+                mail_result = athlete.send_mail()
+                response['mail_response'] = mail_result.json()
 
+            except Exception as e:
+                response['mail_status'] = "error"
+                response['mail_error'] = str(e)
+            return JsonResponse(
+                response
+            )
     else:
         form = UltraAthleteForm() if race == 'Ultra' else SkyAthleteForm()
 
-    return render(request, "register.html", {'form': form, 'race': race, 'public_key': stripe_config})
+    return render(request, "register.html", {
+        'form': form,
+        'race': race,
+        'public_key': stripe_config,
+        'scheme': request.scheme,
+        'host': request.get_host()
+    })
+
+
+def athletes_view(request):
+    sky_athletes = SkyAthlete.objects.all()
+    ultra_athletes = UltraAthlete.objects.all().filter(paid=True)
+    return render(request, "athletes.html", {
+        'sky_athletes': sky_athletes,
+        'ultra_athletes': ultra_athletes
+    })
+
+
+def download_gpx_view(request, race):
+    f = get_gpx_file(race)
+    response = HttpResponse(f.read(), content_type="application/gpx+xml")
+    response['Content-Disposition'] = 'inline; filename=' + 'balkan_' + race + '.gpx'
+
+    return response
 
 
 

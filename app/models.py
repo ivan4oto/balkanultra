@@ -1,5 +1,7 @@
 from django.db import models
 from django.core.mail import send_mail
+from .mail_letters import Letter
+from .services import Mailjet_Letter_Service
 
 # Create your models here.
 
@@ -10,18 +12,16 @@ class UltraAthlete(models.Model):
     email = models.EmailField()
     gender = models.CharField(max_length=25)
     paid = models.BooleanField(default=False)
-    payment_mail = models.EmailField()
-    first_link = models.URLField(blank=True, null=True)
-    second_link = models.URLField(blank=True, null=True)
+    payment_mail = models.EmailField(blank=True, null=True)
+    first_link = models.URLField(blank=False, null=True)
+    second_link = models.URLField(blank=False, null=True)
 
     def send_mail(self):
-        send_mail(
-            'Балкан Ултра - успешна регистрация',
-            'Благодарим Ви, че се регистрирахте за Балкан Ултра. Очакваме ви на 06.08 2022',
-            'balkanultra.noreply@gmail.com',
-            [self.email],
-            fail_silently=False,
+        result = Mailjet_Letter_Service().send_letter(
+            self.email, self.first_name, self.last_name, self.first_link,
+            self.second_link, 'ultra'
         )
+        return result
 
     def __str__(self):
         return str(self.first_name) + ' ' + str(self.last_name)
@@ -34,16 +34,15 @@ class SkyAthlete(models.Model):
     email = models.EmailField()
     gender = models.CharField(max_length=25)
     paid = models.BooleanField(default=False)
-    payment_mail = models.EmailField()
+    payment_mail = models.EmailField(blank=True, null=True)
 
     def send_mail(self):
-        send_mail(
-            'Балкан Ултра - успешна регистрация',
-            'Благодарим Ви, че се регистрирахте за Балкан Ултра. Очакваме ви на 06.08 2022',
-            'balkanultra.noreply@gmail.com',
-            [self.email],
-            fail_silently=False,
+        result = Mailjet_Letter_Service().send_letter(
+            self.email, self.first_name, self.last_name, None,
+            None, 'ultra'
         )
+        return result
+
 
     def __str__(self):
         return str(self.first_name) + ' ' + str(self.last_name)
