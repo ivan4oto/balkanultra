@@ -23,7 +23,8 @@ def results_view(request, type):
     elif type == 'json':
             results = join_results({
                 '2020': ['ultra'],
-                '2021': ['ultra', 'sky']
+                '2021': ['ultra', 'sky'],
+                '2022': ['ultra', 'sky']
             })
             return JsonResponse(results, safe=False)
     return JsonResponse({
