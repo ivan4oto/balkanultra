@@ -3,11 +3,17 @@
 
 // header.html
 
-#testdiv {
-    margin-top: 10px;
+
+#newfooter {
+    height: 50px;
+    width:  100%;
+    background-color: rgb(28, 71, 128);
     text-align: center;
 }
 
+#copyrights {
+    color: white;
+}
 
 @media all and (min-width:100px) and (max-width: 321px){
     .test-size {
@@ -33,32 +39,6 @@
 
 #body-container {
     position:            relative;
-}
-
-#footer-container {
-    bottom:     0;
-    height:     100px;
-    left:       0;
-    position:   absolute;
-    width:      100%;
-}
-
-#new-footer {
-    bottom:             0;
-    position:           relative;
-    width:              100%;
-    background-color: rgba(172, 189, 183, 0.5)
-}
-
-#footer2022 {
-    background-color: white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-.col2022 {
-    height: 70px;
 }
 
 .img2022 {
