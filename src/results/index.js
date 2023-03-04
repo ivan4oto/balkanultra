@@ -14,10 +14,12 @@ const tableHtml = `
     </tbody>
 </table>
 `
-console.log('results in < ---')
+// http://balkan-ultra.com/results/json
+// http://127.0.0.1:8000
+
 $(function() {
     $.ajax({
-        url: `http://balkan-ultra.com/results/json`, // the endpoint
+        url: `http://127.0.0.1:8000/results/json`, // the endpoint
         type: "GET", // http method
         success: [         
             function(json) {
