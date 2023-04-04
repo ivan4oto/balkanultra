@@ -9,3 +9,41 @@ a.nostyle:link, a.nostyle:visited {
 #carouselExampleIndicators {
     box-shadow: -6px 0 white, 6px 0 white, 0 7px 5px -2px rgb(58, 58, 58);
 }
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    margin: 0 1.5px;
+}
+
+@media (max-width: 1236px) {
+    .image-container img {
+        max-width: calc(31% - 3px);
+    }
+}
+
+
+.text-info-container {
+    border: 1px solid gray
+}
+
+.display-4 {
+    color: rgb(128, 140, 165);
+}
+
+
+h4 {
+    color: darkred;
+}
+
+#ultra {
+    color: crimson;
+}
+
+#sky {
+    color: deepskyblue;
+}
