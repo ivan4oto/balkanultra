@@ -4,6 +4,9 @@
  <link rel='stylesheet' href="{% static 'home.css' %}">
 {% endblock %}
 {% block content %}
+{% include 'modals/whoarewe_modal.html' %}
+{% include 'modals/record_modal.html' %}
+{% include 'modals/hiring_modal.html' %}
 <div>
   <!-- carousel -->
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -37,9 +40,9 @@
 <div class="row my-3">
   <div class="col-12">
       <div class="image-container">
-          <img src="https://balkanultra.s3.eu-central-1.amazonaws.com/images/home/why.jpg" alt="Image 1">
-          <img src="https://balkanultra.s3.eu-central-1.amazonaws.com/images/home/record.jpg" alt="Image 2">
-          <img src="https://balkanultra.s3.eu-central-1.amazonaws.com/images/home/hiring.jpg" alt="Image 3">
+          <img src="https://balkanultra.s3.eu-central-1.amazonaws.com/images/home/why.jpg" data-bs-toggle="modal" data-bs-target="#whoAreWeModal" alt="Image 1">
+          <img src="https://balkanultra.s3.eu-central-1.amazonaws.com/images/home/record.jpg" data-bs-toggle="modal" data-bs-target="#recordModal" alt="Image 2">
+          <img src="https://balkanultra.s3.eu-central-1.amazonaws.com/images/home/hiring.jpg" data-bs-toggle="modal" data-bs-target="#hiringModal" alt="Image 3">
       </div>
   </div>
 </div>
