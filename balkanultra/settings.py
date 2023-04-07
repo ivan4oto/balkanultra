@@ -24,8 +24,8 @@ STRIPE_ENABLED = os.getenv("STRIPE_ENABLED", "False") == "True"
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-MAILJET_API_KEY = env('MAILJET_API_KEY')
-MAILJET_API_SECRET = env('MAILJET_API_SECRET')
+MAILJET_API_KEY = "asd"  # env('MAILJET_API_KEY')
+MAILJET_API_SECRET = "asd" # env('MAILJET_API_SECRET')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -102,30 +102,30 @@ WSGI_APPLICATION = 'balkanultra.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if DEVELOPMENT_MODE is True:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'HOST': 'localhost',
-            'PORT': '5432',
-            'NAME': 'balkanultra',
-            'USER': 'postgres',
-            'PASSWORD': 'docker'
-            
-        }
+# if DEVELOPMENT_MODE is True:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'db',
+        'PORT': '5432',
+        'NAME': 'balkanultra',
+        'USER': 'postgres',
+        'PASSWORD': 'docker'
+        
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'HOST': 'localhost',
-            'PORT': '',
-            'NAME': 'balkanultra',
-            'USER': os.environ.get('DB_USER'),
-            'PASSWORD': os.environ.get('DB_PASSWORD')
+}
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'HOST': 'localhost',
+#             'PORT': '',
+#             'NAME': 'balkanultra',
+#             'USER': os.environ.get('DB_USER'),
+#             'PASSWORD': os.environ.get('DB_PASSWORD')
             
-        }
-    }
+#         }
+#     }
     
 
 # Password validation
@@ -188,16 +188,23 @@ PRICE_SKY = "price_1K58XUIv6n82Hb4Km8H0D4be"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-EMAIL_HOST = 'in-v3.mailjet.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER  = 'balkanultra.noreply@gmail.com'
-EMAIL_HOST_PASSWORD  = os.environ.get('EMAIL_PASSWORD')
-EMAIL_USE_TLS = True
+EMAIL_USE_TLS = False
+EMAIL_HOST_USER = 'balkanultra.noreply@gmail.com'
+EMAIL_HOST_PASSWORD = 'vxuiyilgfhacjulu'
+
+SENDINBLUE_API_KEY = os.environ.get("SENDINBLUE_API_KEY")
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
 
 SKY_GPX_LINK = "https://balkanultra.fra1.digitaloceanspaces.com/media/BU_sky.gpx"
 ULTRA_GPX_LINK = "https://balkanultra.fra1.digitaloceanspaces.com/media/BU.gpx"
 
-REGISTRATION_ENABLED = False
+REGISTRATION_ENABLED = True
 
 
 from .cdn.conf import *

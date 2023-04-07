@@ -78,7 +78,3 @@ def get_gpx_file(race: str) -> BytesIO:
         f = BytesIO(r.content)
 
     return f
-
-
-
-

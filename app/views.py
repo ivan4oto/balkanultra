@@ -5,8 +5,7 @@ from .forms import UltraAthleteForm, SkyAthleteForm
 from .models import UltraAthlete, SkyAthlete
 from django.conf import settings
 from .services import join_results, get_gpx_file
-import os
-import requests
+from sib_api_v3_sdk.rest import ApiException
 
 
 def home_view(request, *args, **kwargs):
@@ -59,7 +58,7 @@ def register_view(request, race):
                 mail_result = athlete.send_mail()
                 response['mail_response'] = mail_result.json()
 
-            except Exception as e:
+            except ApiException as e:
                 response['mail_status'] = "error"
                 response['mail_error'] = str(e)
             return JsonResponse(
