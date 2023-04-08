@@ -4,6 +4,7 @@
 *.pyc
 __pycache__
 db.sqlite3
+*.sql
 media
 data/
 migrations/
@@ -18,10 +19,10 @@ migrations/
 *.py[cod] 
 *$py.class 
 
-# Distribution / packaging 
+# Distribution / packaging
+dist/ 
 .Python build/ 
 develop-eggs/ 
-dist/ 
 downloads/ 
 eggs/ 
 .eggs/ 
@@ -36,6 +37,7 @@ wheels/
 *.egg 
 *.manifest 
 *.spec 
+staticfiles-cdn/
 
 # Installer logs 
 pip-log.txt 
@@ -93,5 +95,9 @@ GitHub.sublime-settings
 .history
 
 # NodeJS
-dist/
 node_modules/
+
+# Scripts
+
+nocommit.*
+env.list

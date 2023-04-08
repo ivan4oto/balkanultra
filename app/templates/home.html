@@ -4,59 +4,71 @@
  <link rel='stylesheet' href="{% static 'home.css' %}">
 {% endblock %}
 {% block content %}
+{% include 'modals/whoarewe_modal.html' %}
+{% include 'modals/record_modal.html' %}
+{% include 'modals/hiring_modal.html' %}
+<div>
+  <!-- carousel -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img id='velin' src="https://balkanultra.s3.eu-central-1.amazonaws.com/images/home/banner_1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://balkanultra.s3.eu-central-1.amazonaws.com/images/home/banner_2.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="container">
+    <h2 class="display-4">
+      Балкан Ултра запазва своята традиция и за четвърти път участието е без такса!
+    </h2>
+    </div>
 
-<!-- carousel -->
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+<div class="row my-3">
+  <div class="col-12">
+      <div class="image-container">
+          <img src="https://balkanultra.s3.eu-central-1.amazonaws.com/images/home/why.jpg" data-bs-toggle="modal" data-bs-target="#whoAreWeModal" alt="Image 1">
+          <img src="https://balkanultra.s3.eu-central-1.amazonaws.com/images/home/record.jpg" data-bs-toggle="modal" data-bs-target="#recordModal" alt="Image 2">
+          <img src="https://balkanultra.s3.eu-central-1.amazonaws.com/images/home/hiring.jpg" data-bs-toggle="modal" data-bs-target="#hiringModal" alt="Image 3">
+      </div>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img id='velin' src="https://balkanultra.s3.eu-central-1.amazonaws.com/ultrabanner.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="https://balkanultra.s3.eu-central-1.amazonaws.com/skybanner.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
 
-<!-- small desc -->
-<div class='container'>
-  <div class="d-flex align-items-center flex-column mb-3 mt-2">
-    <h1 class=" display-3">6 - 7 Август 2022</h1>
-    <h4 class=" display-6">Стани част от един от най-трудните за завършване ултра-маратони в България. В сърцето на Централен Балкан!</h4>
-  </div>  
-</div>
-
-<!-- Регистрирай се! -->
-
-
-
-<!-- register banners -->
-<div class="row align-items-md-stretch m-2">
-    <div class="col-md-6">
-        <a class='nostyle' href="{% url 'register' 'ultra'%}">
-            <div id="ultra" class="p-5 text-white rounded-3">
-                <h1>УЛТРА </h1>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-6">
-        <a class='nostyle' href="{% url 'register' 'sky'%}">
-            <div id="sky" class="p-5 border rounded-3">
-                <h1>СКАЙРЪН</h1>
-            </div>
-        </a>
-    </div>
+<div class="container mb-2 text-info-container">
+<h4>Балкан Ултра</h4>
+<h5 id="ultra">78км</h5>
+<p>
+  Тази година ще се проведе четвъртото издание на Балкан Ултра.
+  За пореден път участниците ще се изправят срещу един от най-тежките планински маршрути специално подбран след дългогодишни опити и изследвния от д-р Росен Русев.
+  <br>
+  Старта ще бъде даден от поляната пред хижа Плевен малко преди изгрева. Трасето минава през стръмни и технични участъци, за кратко през град Карлово, където е и една от
+  контролните ни точки. Многократно се редуват изкачване със стръмни и технични спускания, както и тук-таме участъци на които, ако сте запазили краката можете да 
+  "отворите крачката". <br /><br />Формата на състезанието е единствен по рода си за страната. Подкрепителни пунктове няма, но е разрешена външна помощ на обособените контролни
+  точки, които в по-голямата си част са планински хижи. Ако имате приятел, който иска да изпита емоцията от състезанието може да го направи, като ви чака на някоя хижа
+  и пие студена бира/топъл чай докато вие се пържете по чукарите.<br /><br />Трасето е с изключително висока трудност. Поради този факт имаме специални критерии, които всеки
+  участник е длъжен да покрие преди да вземе участие в 78 километровото трасе. Изключение правят доказани бегачи, които по-наша преценка получават Wild Card даващ им право
+  на участие. Балкан Ултра е планинския ултрамаратон с най-голям процент DNF (не завършили) участници. <strong>СВАЛИ ТРАК</strong>
+</p>
+<h5 id="sky">14км</h5>
+<p>
+  За трети път имаме и още една дистанция, която отговаря на критериите за Skyrunning състезание. Трасето е с дължина 14км и положителна денивелация от 1600м и
+  представлява изкачване на връх Ботев по зимната пътека от хижа Плевен до Млечен Чал и връщане обратно по лятната пътека с леко лирическо отклонение до паркинга на ВЕЦ Видима.
+  Състезанието е подходящо за всеки с опит в планината.
+  <strong>СВАЛИ ТРАК</strong>
+</p>
 </div>
 <script src="{% static 'home.bundle.js' %}"></script>
 {% endblock %}

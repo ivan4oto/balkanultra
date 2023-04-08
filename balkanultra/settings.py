@@ -10,25 +10,50 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from django.core.management.utils import get_random_secret_key
 from pathlib import Path
 import os
+import environ
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+STRIPE_ENABLED = os.getenv("STRIPE_ENABLED", "False") == "True"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+MAILJET_API_KEY = "asd"  # env('MAILJET_API_KEY')
+MAILJET_API_SECRET = "asd" # env('MAILJET_API_SECRET')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4u=j-d=@+fwlk(7h2k*r$47sq+c%rknz3=l%9mj%f9btuq*bfv'
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = []
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
-
+# ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+if not DEBUG:
+    ALLOWED_HOSTS = [
+        '.ondigitalocean.app',
+        '164.92.236.124',
+        'balkan-ultra.com',
+        'www.balkan-ultra.com',
+        '127.0.0.1',
+        'localhost'
+        ]
+else:
+    ALLOWED_HOSTS = [
+        '127.0.0.1',
+        'localhost'
+        '127.0.0.1:8000'
+    ]
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,7 +65,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -77,17 +102,31 @@ WSGI_APPLICATION = 'balkanultra.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# if DEVELOPMENT_MODE is True:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_NAME'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
         'HOST': 'db',
-        'PORT': 5432,
+        'PORT': '5432',
+        'NAME': 'balkanultra',
+        'USER': 'postgres',
+        'PASSWORD': 'docker'
+        
     }
 }
-
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'HOST': 'localhost',
+#             'PORT': '',
+#             'NAME': 'balkanultra',
+#             'USER': os.environ.get('DB_USER'),
+#             'PASSWORD': os.environ.get('DB_PASSWORD')
+            
+#         }
+#     }
+    
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -126,14 +165,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/dist/'
-# STATIC_ROOT = "" # STATIC_ROOT is the folder where static files will be stored after using manage.py 
+STATIC_ROOT = BASE_DIR / "staticfiles-cdn"
 
 STATICFILES_DIRS = [
     BASE_DIR / "dist"
 ]
 
-# STRIPE PAYMENTS
+MEDIA_ROOT = BASE_DIR / "staticfiles-cdn" / "uploads"
 
+
+# STRIPE PAYMENTS
 STRIPE_PUBLISHABLE_KEY = "pk_test_51K4TloIv6n82Hb4KGuNvCkn9xVgdmai3kkroDvyMolcq7Ie0zbLHPRCJ6PMitJSyFwvtk2n2KEIUIt7Oup6QNDEy00HwWI6LHg"
 STRIPE_SECRET_KEY = "sk_test_51K4TloIv6n82Hb4KrY6OcDmmxyxDe500U6nTHkz8pn5QAoa9Y4gqwy8Npki0741ec2eGImVJDV9TTnp66xhwI16K00HO2dAkuZ"
 STRIPE_WEBHOOK_SECRET = "whsec_3d92WBRzeIOklazD1JNm0qiL22NzcHvo"
@@ -147,8 +188,25 @@ PRICE_SKY = "price_1K58XUIv6n82Hb4Km8H0D4be"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER  = 'balkanultra.noreply@gmail.com'
-EMAIL_HOST_PASSWORD  = '' # os.environ.get('EMAIL_PASSWORD')
-EMAIL_USE_TLS = True
+EMAIL_USE_TLS = False
+EMAIL_HOST_USER = 'balkanultra.noreply@gmail.com'
+EMAIL_HOST_PASSWORD = 'vxuiyilgfhacjulu'
+
+SENDINBLUE_API_KEY = os.environ.get("SENDINBLUE_API_KEY")
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+
+SKY_GPX_LINK = "https://balkanultra.fra1.digitaloceanspaces.com/media/BU_sky.gpx"
+ULTRA_GPX_LINK = "https://balkanultra.fra1.digitaloceanspaces.com/media/BU.gpx"
+
+REGISTRATION_ENABLED = True
+
+
+from .cdn.conf import *
+
+

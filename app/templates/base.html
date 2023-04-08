@@ -5,8 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
     <link rel='stylesheet' href="{% static 'base.css' %}">
-    <title>{% block title %}Django Bootcamp{% endblock %}</title>
+    <title>{% block title %}Balkan Ultra{% endblock %}</title>
     {% block head %}{% endblock %}
   </head>
   <body>
@@ -15,14 +16,19 @@
             {% include 'snippets/header.html' %}
         </div>
         
-        <div id='content-container'>
+        <div>
           {% block content %}
           {% endblock %}
         </div>
-        <div id='footer-container'>
-          {% include 'snippets/footer.html' %}
-        </div>
     </div>
+
+
+  <div id="newfooter">
+    <div id="copyrights">
+      © 2023 Rosen & Ivan. All Rights Reserved.
+    </div>
+  </div>
+
     <script src="{% static 'base.bundle.js' %}"></script>
     {% block js %}
     {% endblock %}

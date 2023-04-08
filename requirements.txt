@@ -1,3 +1,11 @@
 Django>=3.0,<4.0
-psycopg2>=2.8
+psycopg2-binary
 stripe
+gunicorn
+dj-database-url
+django-storages
+boto3
+mailjet-rest
+django-environ
+requests
+sib-api-v3-sdk==7.6.0

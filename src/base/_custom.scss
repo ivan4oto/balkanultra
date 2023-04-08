@@ -1,47 +1,57 @@
 // Your variable overrides
 // $body-bg: $gray-100;
 
-
-$dark: #811805;
-$navbar-dark-color:  #f5edde;
-$navbar-dark-hover-color: #c98c0a;
-
-$primary: #c98c0a;
-
-
 // header.html
-#site-logo {
-    background: url('../base/sitelogo.png');
+
+  
+#newfooter {
     height: 50px;
-    width: 50px;
-    background-repeat: no-repeat;
-    background-size: 50px 50px;
+    width:  100%;
+    background-color: rgb(28, 71, 128);
+    text-align: center;
 }
 
-#content-container {
+#copyrights {
+    color: white;
+}
 
+@media all and (min-width:100px) and (max-width: 321px){
+    .test-size {
+        width: 40px;
+        height: auto;
+    }
+}
+
+@media all and (min-width:321px) and (max-width: 550px){
+    .test-size {
+        width: 70px;
+        height: auto;
+    }
+}
+
+
+@media all and (min-width:550px) and (max-width: 800px){
+    .test-size {
+        width: 90px;
+        height: auto;
+    }
 }
 
 #body-container {
-    min-height: 100%;
-    padding: 0 0 100px;
-    position: relative;
+    position:            relative;
 }
 
-#footer-container {
-    bottom: 0;
-    height: 100px;
-    left: 0;
-    position: absolute;
-    width: 100%;
+.img2022 {
+    max-height: 100%;
+    margin: auto;
+    display: block;
 }
-
-
 
 
 // Bootstrap and its default variables
 
 // Optional
+@import "./colors";
 @import "~bootstrap/scss/bootstrap";
 // @import "material-icons";
 
