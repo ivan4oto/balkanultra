@@ -18,7 +18,7 @@ class UltraAthlete(models.Model):
 
     def send_mail(self):
         result = mail_service.send_email(
-            "balkanultra.noreply@gmail.com",
+            {"email": "balkanultra.noreply@gmail.com", "name": "Balkan Ultra"},
             [{"email": self.email, "name": self.first_name}],
             "78",
             [{"email": "balkanultra@abv.bg", "name": "Rosen Rusev"}]
@@ -40,7 +40,7 @@ class SkyAthlete(models.Model):
 
     def send_mail(self):
         result = mail_service.send_email(
-            "balkanultra.noreply@gmail.com",
+            {"email": "balkanultra.noreply@gmail.com", "name": "Balkan Ultra"},
             [{"email": self.email, "name": self.first_name}],
             "14",
             [{"email": "balkanultra@abv.bg", "name": "Rosen Rusev"}]
