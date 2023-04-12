@@ -6,7 +6,8 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: docker
+      POSTGRES_USER: balkanultra
+      POSTGRES_PASSWORD: postgres
       POSTGRES_DB: balkanultra
 
   adminer:
@@ -18,10 +19,10 @@ services:
   django:
     build:
       context: .
-      dockerfile: docker/local.Dockerfile
+      dockerfile: ../docker/local.Dockerfile
     command: sh /entrypoint.sh python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/balkan-app
+      - ..:/balkan-app
     ports:
       - "8000:8000"
     depends_on:
