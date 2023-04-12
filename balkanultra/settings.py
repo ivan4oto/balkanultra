@@ -36,6 +36,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+IS_IN_CONTAINER = os.getenv("IS_IN_CONTAINER", "False") == "True"
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
 # ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
@@ -101,31 +102,29 @@ WSGI_APPLICATION = 'balkanultra.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# if DEVELOPMENT_MODE is True:
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'db',
-        'PORT': '5432',
-        'NAME': 'balkanultra',
-        'USER': 'postgres',
-        'PASSWORD': 'docker'
-        
+if IS_IN_CONTAINER is True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'HOST': 'db',
+            'PORT': '5432',
+            'NAME': 'balkanultra',
+            'USER': os.environ.get('DB_USER'),
+            'PASSWORD': os.environ.get('DB_PASSWORD')
+        }
     }
-}
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.postgresql',
-#             'HOST': 'localhost',
-#             'PORT': '',
-#             'NAME': 'balkanultra',
-#             'USER': os.environ.get('DB_USER'),
-#             'PASSWORD': os.environ.get('DB_PASSWORD')
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'HOST': 'localhost',
+            'PORT': '',
+            'NAME': 'balkanultra',
+            'USER': "balkanultra",
+            'PASSWORD': "postgres"
             
-#         }
-#     }
+        }
+    }
     
 
 # Password validation

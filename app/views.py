@@ -57,7 +57,7 @@ def register_view(request, race):
                 }
             try:
                 mail_result = athlete.send_mail()
-                response['mail_response'] = mail_result.json()
+                response['mail_response'] = mail_result.to_str()
 
             except ApiException as e:
                 response['mail_status'] = "error"

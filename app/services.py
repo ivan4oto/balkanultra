@@ -7,19 +7,22 @@ import requests
 from .mail_letters import Letter
 from mailjet_rest import Client
 from django.conf import settings
+from django.core.files.storage import default_storage
+
 
 absolute_path = 'app/static/{year}{race}.json'
 
 
 def join_results(path_mapping):
     results = {}
-
     for year, races in path_mapping.items():
         results[year] = {}
         for race in races:
-            with open(absolute_path.format(year=str(year), race=race), 'r') as f:
-                d = json.load(f)
-                results[year][race] = d
+            file_path = f'{year}{race}.json'
+            if default_storage.exists(file_path):
+                with default_storage.open(file_path, 'r') as f:
+                    d = json.load(f)
+                    results[year][race] = d
     return(results)
 
 class Mailjet_Letter_Service():
