@@ -24,8 +24,6 @@ STRIPE_ENABLED = os.getenv("STRIPE_ENABLED", "False") == "True"
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-MAILJET_API_KEY = "asd"  # env('MAILJET_API_KEY')
-MAILJET_API_SECRET = "asd" # env('MAILJET_API_SECRET')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
