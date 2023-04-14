@@ -19,7 +19,6 @@ env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
 )
-STRIPE_ENABLED = os.getenv("STRIPE_ENABLED", "False") == "True"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,24 +39,18 @@ DEBUG_PROPAGATE_EXCEPTIONS = True
 # ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 if not DEBUG:
     ALLOWED_HOSTS = [
-        '.ondigitalocean.app',
-        '164.92.236.124',
-        'balkan-ultra.com',
-        'www.balkan-ultra.com',
-        '127.0.0.1',
-        'localhost'
+        "*"
         ]
 else:
     ALLOWED_HOSTS = [
         '127.0.0.1',
         'localhost'
-        '127.0.0.1:8000'
+        "0.0.0.0"
     ]
 # Application definition
 
 INSTALLED_APPS = [
     'app.apps.AppConfig',
-    'stripe_app.apps.StripeAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -104,7 +97,7 @@ if IS_IN_CONTAINER is True:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'HOST': 'db',
+            'HOST': 'localhost',
             'PORT': '5432',
             'NAME': 'balkanultra',
             'USER': os.environ.get('DB_USER'),
@@ -116,7 +109,7 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'HOST': 'localhost',
-            'PORT': '',
+            'PORT': '5432',
             'NAME': 'balkanultra',
             'USER': "balkanultra",
             'PASSWORD': "postgres"
@@ -169,15 +162,6 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_ROOT = BASE_DIR / "staticfiles-cdn" / "uploads"
-
-
-# STRIPE PAYMENTS
-STRIPE_PUBLISHABLE_KEY = "pk_test_51K4TloIv6n82Hb4KGuNvCkn9xVgdmai3kkroDvyMolcq7Ie0zbLHPRCJ6PMitJSyFwvtk2n2KEIUIt7Oup6QNDEy00HwWI6LHg"
-STRIPE_SECRET_KEY = "sk_test_51K4TloIv6n82Hb4KrY6OcDmmxyxDe500U6nTHkz8pn5QAoa9Y4gqwy8Npki0741ec2eGImVJDV9TTnp66xhwI16K00HO2dAkuZ"
-STRIPE_WEBHOOK_SECRET = "whsec_3d92WBRzeIOklazD1JNm0qiL22NzcHvo"
-
-PRICE_ULTRA = "price_1K53s6Iv6n82Hb4KoOe1Ek7F"
-PRICE_SKY = "price_1K58XUIv6n82Hb4Km8H0D4be"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

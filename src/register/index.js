@@ -4,8 +4,6 @@ import "./main.scss";
 // JS
 import "./style_moder"
 import Modal from "bootstrap/js/dist/modal"
-// import "./csfr_cookies";
-// import { checkoutRedirect } from "./checkout"
 
 
 
@@ -55,20 +53,9 @@ $('#post-form').on('submit', function(event){
         success: [       
             function(json) {
                 toggleLoading()
-            // If PAYMENT_ENABLED flag is on proceed to checkout
-                if (PAYMENT_ENABLED) {
-                    console.log("success about to redirect"); // another sanity check
-                    const athleteMail = {
-                        email: json["email"]
-                    }
-                    checkoutRedirect(athleteMail)
-                
-                } else {
-                    // If PAYMENT_ENABLED flag is NOT on trigger modal
-                    showModal(json);
-                    console.log('Успешна регистрация');
-                    console.log(json)
-                }
+                showModal(json);
+                console.log('Успешна регистрация');
+                console.log(json)
             }
         ],
         error: function(xhr,errmsg,err) {
