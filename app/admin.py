@@ -2,7 +2,6 @@ import csv
 from django.contrib import admin
 from django.http import HttpResponse
 from app.models import UltraAthlete, SkyAthlete
-from stripe_app.models import Payment
 
 # Register your models here.
 
@@ -28,7 +27,3 @@ class AuthorAdmin(admin.ModelAdmin):
 @admin.register(UltraAthlete)
 class AuthorAdmin(admin.ModelAdmin):
     actions = [export_as_csv]
-
-@admin.register(Payment)
-class AuthorAdmin(admin.ModelAdmin):
-    pass
