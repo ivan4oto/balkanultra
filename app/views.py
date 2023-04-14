@@ -35,7 +35,6 @@ def register_view(request, race):
     if not settings.REGISTRATION_ENABLED:
         return render(request, "disabled_register.html")
 
-    stripe_config = settings.STRIPE_PUBLISHABLE_KEY
     if request.method == 'POST':
         model = UltraAthlete if race == 'ultra' else SkyAthlete
         athlete = model.objects.filter(email=request.POST['email']).first()
@@ -71,7 +70,6 @@ def register_view(request, race):
     return render(request, "register.html", {
         'form': form,
         'race': race,
-        'public_key': stripe_config,
         'scheme': request.scheme,
         'host': request.get_host()
     })
