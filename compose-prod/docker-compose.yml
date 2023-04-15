@@ -19,8 +19,8 @@ services:
   django:
     build:
       context: .
-      dockerfile: ../docker/local.Dockerfile
-    command: sh /entrypoint.sh python manage.py runserver 0.0.0.0:8000
+      dockerfile: ../docker/prod.Dockerfile
+    command: sh /entrypoint.sh
     volumes:
       - ..:/balkan-app
     ports:

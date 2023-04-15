@@ -19,7 +19,7 @@ const tableHtml = `
 
 $(function() {
     $.ajax({
-        url: `http://127.0.0.1:8000/results/json`, // the endpoint
+        url: `http://0.0.0.0:8000/results/json`, // the endpoint
         type: "GET", // http method
         success: [         
             function(json) {
