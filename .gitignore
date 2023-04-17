@@ -100,4 +100,4 @@ node_modules/
 
 nocommit.*
 env.list
-devenv.list
+devenv.sh
