@@ -1,0 +1,7 @@
+package-lock.json
+package.json
+src/
+venv/
+docker/
+.vscode
+webpack.config.js
