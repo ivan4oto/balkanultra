@@ -169,13 +169,6 @@ MEDIA_ROOT = BASE_DIR / "staticfiles-cdn" / "uploads"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = False
-EMAIL_HOST_USER = 'balkanultra.noreply@gmail.com'
-EMAIL_HOST_PASSWORD = 'vxuiyilgfhacjulu'
-
 SENDINBLUE_API_KEY = os.environ.get("SENDINBLUE_API_KEY")
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
