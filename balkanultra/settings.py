@@ -36,6 +36,12 @@ DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 IS_IN_CONTAINER = os.getenv("IS_IN_CONTAINER", "False") == "True"
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
+CORS_ALLOWED_ORIGINS = [
+    "https://balkan-ultra.com",
+    "www.balkan-ultra.com",
+    "balkan-ultra.com",
+]
+
 # ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 if not DEBUG:
     ALLOWED_HOSTS = [
