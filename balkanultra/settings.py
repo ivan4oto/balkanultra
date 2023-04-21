@@ -45,8 +45,10 @@ CORS_ALLOWED_ORIGINS = [
 # ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 if not DEBUG:
     ALLOWED_HOSTS = [
-        "*"
-        ]
+        "https://balkan-ultra.com",
+        "www.balkan-ultra.com",
+        "balkan-ultra.com",
+    ]
 else:
     ALLOWED_HOSTS = [
         '127.0.0.1',
