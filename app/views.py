@@ -19,16 +19,14 @@ def about_view(request, *args, **kwargs):
 def results_view(request, type):
     if type == 'all':
         return render(request, "results.html")
-    elif type == 'json':
-            results = join_results({
-                '2020': ['ultra'],
-                '2021': ['ultra', 'sky'],
-                '2022': ['ultra', 'sky']
-            })
-            return JsonResponse(results, safe=False)
-    return JsonResponse({
-        'ala': 'bala'
+
+def get_results(request):
+    results = join_results({
+        '2020': ['ultra'],
+        '2021': ['ultra', 'sky'],
+        '2022': ['ultra', 'sky']
     })
+    return JsonResponse(results, safe=False)
 
 @csrf_protect
 def register_view(request, race):
