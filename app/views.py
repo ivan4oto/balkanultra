@@ -42,7 +42,7 @@ def register_view(request, race):
                 "email": athlete.email
             })
 
-        form = UltraAthleteForm(request.POST) if race == 'Ultra' else SkyAthleteForm(request.POST)
+        form = UltraAthleteForm(request.POST) if race == 'ultra' else SkyAthleteForm(request.POST)
         if form.is_valid():
             athlete = form.save()
             response = {
@@ -63,7 +63,7 @@ def register_view(request, race):
                 response
             )
     else:
-        form = UltraAthleteForm() if race == 'Ultra' else SkyAthleteForm()
+        form = UltraAthleteForm() if race == 'ultra' else SkyAthleteForm()
 
     return render(request, "register.html", {
         'form': form,
@@ -88,14 +88,3 @@ def download_gpx_view(request, race):
     response['Content-Disposition'] = 'inline; filename=' + 'balkan_' + race + '.gpx'
 
     return response
-
-
-
-def checkout_view(request, race):
-    return render(request, "checkout.html", {"race": race})
-
-def success_view(request):
-    return render(request, "success.html")
-
-def cancel_view(request):
-    return render(request, "cancel.html")
