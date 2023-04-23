@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import sys
 from django.core.management.utils import get_random_secret_key
 from pathlib import Path
 import os
@@ -124,7 +125,14 @@ else:
             
         }
     }
-    
+
+# For tests switches to default SQLite3 Database
+if 'test' in sys.argv or 'test_coverage' in sys.argv:  # Covers regular testing and pytest
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
