@@ -18,7 +18,7 @@
 
 <!-- Info color banner -->
 <div>
-    {% if race == 'Ultra' %}
+    {% if race == 'ultra' %}
     <div class="d-flex justify-content-center" id='info-banner-ultra'>
         <h3 id='info-text' class='my-2'>
             ULTRA
@@ -35,7 +35,7 @@
 
 <!-- Card with info about registration -->
 <div class='mt-2'>
-{% if race == 'Ultra' %}
+{% if race == 'ultra' %}
     {% include 'cards/register-ultra.html' %}
 {% else %}
     {% include 'cards/register-sky.html' %}

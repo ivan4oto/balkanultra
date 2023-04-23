@@ -7,7 +7,6 @@ module.exports = {
     entry: {
         base: './src/base/index.js',
         home: './src/home/index.js',
-        checkout: './src/checkout/index.js',
         register: './src/register/index.js',
         results: './src/results/index.js',
         athletes: './src/athletes/index.js',

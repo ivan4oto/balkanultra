@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import sys
 from django.core.management.utils import get_random_secret_key
 from pathlib import Path
 import os
@@ -36,11 +37,19 @@ DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 IS_IN_CONTAINER = os.getenv("IS_IN_CONTAINER", "False") == "True"
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
+CORS_ALLOWED_ORIGINS = [
+    "https://balkan-ultra.com",
+    "www.balkan-ultra.com",
+    "balkan-ultra.com",
+]
+
 # ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 if not DEBUG:
     ALLOWED_HOSTS = [
-        "*"
-        ]
+        "https://balkan-ultra.com",
+        "www.balkan-ultra.com",
+        "balkan-ultra.com",
+    ]
 else:
     ALLOWED_HOSTS = [
         '127.0.0.1',
@@ -97,9 +106,9 @@ if IS_IN_CONTAINER is True:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'HOST': 'localhost',
-            'PORT': '5432',
-            'NAME': 'balkanultra',
+            'HOST': os.environ.get('DB_HOST'),
+            'PORT': os.environ.get('DB_PORT'),
+            'NAME': os.environ.get('DB_NAME'),
             'USER': os.environ.get('DB_USER'),
             'PASSWORD': os.environ.get('DB_PASSWORD')
         }
@@ -116,7 +125,14 @@ else:
             
         }
     }
-    
+
+# For tests switches to default SQLite3 Database
+if 'test' in sys.argv or 'test_coverage' in sys.argv:  # Covers regular testing and pytest
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -168,13 +184,6 @@ MEDIA_ROOT = BASE_DIR / "staticfiles-cdn" / "uploads"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = False
-EMAIL_HOST_USER = 'balkanultra.noreply@gmail.com'
-EMAIL_HOST_PASSWORD = 'vxuiyilgfhacjulu'
 
 SENDINBLUE_API_KEY = os.environ.get("SENDINBLUE_API_KEY")
 

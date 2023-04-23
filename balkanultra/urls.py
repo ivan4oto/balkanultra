@@ -21,11 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('about', about_view, name='about'),
+    path('results/json', get_results, name='get_results'),
     path('results/<str:type>', results_view, name='results'),
     path('register/<str:race>', register_view, name='register'),
     path('download/<str:race>', download_gpx_view, name='download'),
-    path('athletes', athletes_view, name='athletes'),
-    path('success', success_view, name='success'),
-    path('cancel', cancel_view, name='cancel'),
-    path('checkout/<str:race>', checkout_view, name='checkout')
+    path('athletes', athletes_view, name='athletes')
 ]
