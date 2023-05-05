@@ -3,10 +3,18 @@ from django.conf import settings
 from django.test import Client, RequestFactory, TestCase
 from django.urls import reverse
 from unittest import mock
+from sib_api_v3_sdk.rest import ApiException
 
 from app.models import SkyAthlete, UltraAthlete
 from app.views import athletes_view, download_gpx_view, register_view
 
+
+class MockMailResult:
+    def __init__(self, value):
+        self.value = value
+
+    def to_str(self):
+        return self.value
 
 class AthletesViewTests(TestCase):
 
@@ -139,5 +147,22 @@ class AthletesViewTests(TestCase):
         response = self.client.post(reverse('register', args=['ultra']), self.ultra_data)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'already exists')
+        
+    @mock.patch('app.models.UltraAthlete.send_mail')    
+    def test_register_ultra_athlete_mail_service(self, mock_send_mail):
+        settings.REGISTRATION_ENABLED = True
+        mock_send_mail.return_value =  MockMailResult('mail_sent')
+        url = reverse('register', args=['ultra'])
+        response = self.client.post(url, self.ultra_data)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()['mail_status'], 'success')
+        self.assertEqual(response.json()['mail_error'], None)
+        self.assertTrue(UltraAthlete.objects.filter(email=self.ultra_data['email']).exists())
 
-    # TODO: Implement tests register view send email case...
+    @mock.patch('app.models.SkyAthlete.send_mail')
+    def test_send_mail_api_exception(self, mock_send_mail):
+        mock_send_mail.side_effect = ApiException('API error', 'Failure')
+        response = self.client.post(reverse('register', args=['sky']), self.sky_data)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()['mail_status'], 'error')
+        self.assertEqual(response.json()['mail_error'], '(API error)\nReason: Failure\n')

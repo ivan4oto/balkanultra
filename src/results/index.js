@@ -1,64 +1,72 @@
-import "./main.scss"
+import "./main.scss";
+import ultra2020 from "./2020ultra.json"
+import ultra2021 from "./2021ultra.json"
+import sky2021 from "./2021sky.json"
+import ultra2022 from "./2022ultra.json"
+import sky2022 from "./2022sky.json"
 
-const tableHtml = `
-<table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Име</th>
-                <th scope="col">Фамилия</th>
-                <th scope="col">Време</th>
-            </tr>
-        </thead>
-    <tbody id='table-body'>
-    </tbody>
-</table>
-`
+// Map with results
+const resultsMap = {
+  'ultra2020': ultra2020,
+  'ultra2021': ultra2021,
+  'sky2021': sky2021,
+  'ultra2022': ultra2022,
+  'sky2022': sky2022
+}
 
-$(function() {
-    $.ajax({
-        url: getDataUrl, // the endpoint
-        type: "GET", // http method
-        success: [         
-            function(json) {
-                var years_mapping = ["first", "second"] // Bootstrap doesn't allow numbers to be used as ids for some reason...
-                
-                for (let y = 0; y < Object.keys(json).length; y ++){
-                    var year = Object.keys(json)[y];
-                    
-                    for (let r = 0; r < Object.keys(json[year]).length; r ++) {
-                        var race = Object.keys(json[year])[r]
-                        var raceCyrilic = race == 'ultra' ? 'Ултра' : 'Скай'
-                        $(`#${years_mapping[y]}`).append(`
-                        <div class="d-flex justify-content-center">
-                        <h3 id='type-label' class='mt-2'>${raceCyrilic}</h3>
-                        </div>
-                        `)
-                        $(`#${years_mapping[y]}`).append(tableHtml)
-                        $('#table-body').attr('id', `table-${year}-${race}`)
+// Function to populate table with data
+function populateTable(data) {
+  const tableBody = document.getElementById("table-body");
+  data.forEach((item) => {
+    const row = document.createElement("tr");
 
-                        
-                        for (let i = 0; i < json[year][race].length; i++) {
-                            var athleteProps = json[year][race][i]
-                            $(`#table-${year}-${race}`).append(`
-                            <tr>
-                                <th scope="row">${athleteProps['Ranking']}</th>
-                                <td>${athleteProps['First name']}</td>
-                                <td>${athleteProps['Family name']}</td>
-                                <td>${athleteProps['Time']}</td>
-                            </tr>
-                            `)
-                        }
-
-                    }
-
-                }                
-        }],
-
-        error: function(xhr,errmsg,err) {
-            $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
-                " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
-            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
-        }
+    Object.values(item).forEach((value) => {
+      const cell = document.createElement("td");
+      cell.textContent = value;
+      row.appendChild(cell);
     });
-})
+
+    tableBody.appendChild(row);
+  });
+}
+
+// Function to load JSON data
+async function loadJsonData(filename) {
+  const response = await fetch(filename);
+  if (!response.ok) {
+    throw new Error(`Error loading ${filename}: ${response.statusText}`);
+  }
+  return await response.json();
+}
+
+// Function to clear the table content
+function clearTable() {
+  const tableBody = document.getElementById("table-body");
+  while (tableBody.firstChild) {
+    tableBody.removeChild(tableBody.firstChild);
+  }
+}
+
+// Function to update the table with the selected data
+async function updateTable() {
+  const year = document.getElementById("year-select").value;
+  const type = document.getElementById("type-select").value;
+
+  // Load the JSON data
+  const staticPath = document.getElementById("results-container").getAttribute("data-static-path");
+  const filename = `${type}${year}`;
+  try {
+    const jsonData = resultsMap[filename] // await loadJsonData(filename);
+    clearTable();
+    populateTable(jsonData);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Add event listeners to the dropdowns
+document.getElementById("year-select").addEventListener("change", updateTable);
+document.getElementById("type-select").addEventListener("change", updateTable);
+
+// Call the function to load the initial data and populate the table
+updateTable();

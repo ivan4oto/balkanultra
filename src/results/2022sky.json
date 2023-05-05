@@ -1,0 +1,306 @@
+[
+    {
+        "Ranking": 1,
+        "Time": "02:04:28",
+        "Family name": "Popov",
+        "First name": "Evgeniy",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 2,
+        "Time": "02:06:25",
+        "Family name": "Todorov",
+        "First name": "Yordan",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 3,
+        "Time": "02:16:09",
+        "Family name": "Tsamantouridis",
+        "First name": "Charalampos",
+        "Gender": "M",
+        "Nationality": "GRE"
+    },
+    {
+        "Ranking": 4,
+        "Time": "02:24:24",
+        "Family name": "Ivanov",
+        "First name": "Hristo",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 5,
+        "Time": "02:25:03",
+        "Family name": "Gaytandzhiev",
+        "First name": "Mladen",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 6,
+        "Time": "02:30:10",
+        "Family name": "Minkov",
+        "First name": "Pavlin",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 7,
+        "Time": "02:41:06",
+        "Family name": "Tonchev",
+        "First name": "Milen",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 8,
+        "Time": "02:41:43",
+        "Family name": "Stefanov",
+        "First name": "Nikolay",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 9,
+        "Time": "02:44:57",
+        "Family name": "Dimitrov",
+        "First name": "Bozhidar",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 10,
+        "Time": "02:45:57",
+        "Family name": "Gochev",
+        "First name": "Georgi",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 11,
+        "Time": "02:46:05",
+        "Family name": "Dimitrov",
+        "First name": "Rumen",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 12,
+        "Time": "02:46:28",
+        "Family name": "Vasilev",
+        "First name": "Hristo",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 13,
+        "Time": "02:46:35",
+        "Family name": "Grigorova",
+        "First name": "Antonia",
+        "Gender": "F",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 14,
+        "Time": "02:52:47",
+        "Family name": "Trifonov",
+        "First name": "Ventsislav",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 15,
+        "Time": "02:55:20",
+        "Family name": "Stefanova",
+        "First name": "Rositsa",
+        "Gender": "F",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 16,
+        "Time": "03:04:42",
+        "Family name": "Alexiev",
+        "First name": "Boris",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 17,
+        "Time": "03:04:57",
+        "Family name": "Syuleyman",
+        "First name": "Bilserin",
+        "Gender": "F",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 18,
+        "Time": "03:09:03",
+        "Family name": "Todorov",
+        "First name": "Radoslav",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 19,
+        "Time": "03:15:36",
+        "Family name": "Dilova",
+        "First name": "Nadezhda",
+        "Gender": "F",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 20,
+        "Time": "03:16:26",
+        "Family name": "Genadiev",
+        "First name": "Hristo",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 21,
+        "Time": "03:19:55",
+        "Family name": "Marinova",
+        "First name": "Marinela",
+        "Gender": "F",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 22,
+        "Time": "03:23:43",
+        "Family name": "Yankov",
+        "First name": "Simeon",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 23,
+        "Time": "03:23:54",
+        "Family name": "Ilieva",
+        "First name": "Maria",
+        "Gender": "F",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 24,
+        "Time": "03:33:10",
+        "Family name": "Rachev",
+        "First name": "Valentin",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 25,
+        "Time": "03:33:18",
+        "Family name": "Miroslavov",
+        "First name": "Iliyan",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 26,
+        "Time": "03:33:38",
+        "Family name": "Petrov",
+        "First name": "Atanas",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 27,
+        "Time": "03:33:40",
+        "Family name": "Donev",
+        "First name": "Ivaylo",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 28,
+        "Time": "03:34:02",
+        "Family name": "Stanev",
+        "First name": "Vasil",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 29,
+        "Time": "03:48:46",
+        "Family name": "Todorov",
+        "First name": "Nikolay",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 30,
+        "Time": "03:49:04",
+        "Family name": "Todorova",
+        "First name": "Lyubomira",
+        "Gender": "F",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 31,
+        "Time": "03:58:06",
+        "Family name": "Kovachev",
+        "First name": "Kolyo",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 32,
+        "Time": "04:01:56",
+        "Family name": "Kostadinov",
+        "First name": "Atanas",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 33,
+        "Time": "04:01:58",
+        "Family name": "Todorov Nikito",
+        "First name": "Nikolay",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": 34,
+        "Time": "04:29:27",
+        "Family name": "Kondarev",
+        "First name": "Todor",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": "DNF",
+        "Time": "",
+        "Family name": "Velichkov",
+        "First name": "Daniel",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": "DNF",
+        "Time": "",
+        "Family name": "Georgieva",
+        "First name": "Rozvigora",
+        "Gender": "F",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": "DNF",
+        "Time": "",
+        "Family name": "Ivanov",
+        "First name": "Simeon",
+        "Gender": "M",
+        "Nationality": "BUL"
+    },
+    {
+        "Ranking": "DNF",
+        "Time": "",
+        "Family name": "Gencheva",
+        "First name": "Zlatina",
+        "Gender": "F",
+        "Nationality": "BUL"
+    }
+]

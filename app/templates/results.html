@@ -4,20 +4,52 @@
  <link rel='stylesheet' href="{% static 'results.css' %}">
 {% endblock %}
 {% block content %}
-{% include 'snippets/results-header.html' %}
-<div class='container' id='results-container'>
+<div class='container mt-3' id='results-container' data-static-path="{% static 'balkanultra/' %}">
 
-  <div class="tab-content">
-    <div class="tab-pane active" id="first" role="tabpanel" aria-labelledby="first-tab"></div>
-    <div class="tab-pane" id="second" role="tabpanel" aria-labelledby="second-tab"></div>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="year-select">Избери Година:</label>
+      <select class="form-select" id="year-select">
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label for="type-select">Избери Дистанция:</label>
+      <select class="form-select" id="type-select">
+        <option value="ultra">Ultra</option>
+        <option value="sky">Sky</option>
+      </select>
+    </div>
   </div>
 
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Позиция</th>
+            <th scope="col">Време</th>
+            <th scope="col">Фамилия</th>
+            <th scope="col">Име</th>
+            <th scope="col">Пол</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 {% endblock %}
 
 {% block js %}
 <script>
   const getDataUrl = "{% url 'get_results' %}";
+  const route = "{% static 'balkanultra/' %}";
+  console.log(route)
+
 </script>
 <script src="{% static 'results.bundle.js' %}">
 </script>
