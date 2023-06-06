@@ -191,8 +191,8 @@ AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
 
-SKY_GPX_LINK = "https://balkanultra.fra1.digitaloceanspaces.com/media/BU_sky.gpx"
-ULTRA_GPX_LINK = "https://balkanultra.fra1.digitaloceanspaces.com/media/BU.gpx"
+SKY_GPX_LINK = "https://balkanultra.s3.eu-central-1.amazonaws.com/media/Balkan+Ultra+Sky.gpx"
+ULTRA_GPX_LINK = "https://balkanultra.s3.eu-central-1.amazonaws.com/media/Balkan+Ultra+Long.gpx"
 
 REGISTRATION_ENABLED = True
 
