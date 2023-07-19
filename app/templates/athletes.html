@@ -24,6 +24,7 @@
             {% for athlete in sky_athletes %}
             <tr class='table'>
                 <th scope="row"></th>
+                <td>{{ forloop.counter }}</td>
                 <td>{{ athlete.first_name }}</td>
                 <td>{{ athlete.last_name }}</td>
             </tr>
@@ -47,6 +48,7 @@
             {% for athlete in ultra_athletes %}
             <tr class='table'>
                 <th scope="row"></th>
+                <td>{{ forloop.counter }}</td>
                 <td>{{ athlete.first_name }}</td>
                 <td>{{ athlete.last_name }}</td>
             </tr>
