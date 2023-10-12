@@ -34,14 +34,6 @@ function populateTable(data) {
   });
 }
 
-// Function to load JSON data
-async function loadJsonData(filename) {
-  const response = await fetch(filename);
-  if (!response.ok) {
-    throw new Error(`Error loading ${filename}: ${response.statusText}`);
-  }
-  return await response.json();
-}
 
 // Function to clear the table content
 function clearTable() {
@@ -57,7 +49,6 @@ async function updateTable() {
   const type = document.getElementById("type-select").value;
 
   // Load the JSON data
-  const staticPath = document.getElementById("results-container").getAttribute("data-static-path");
   const filename = `${type}${year}`;
   try {
     const jsonData = resultsMap[filename] // await loadJsonData(filename);
