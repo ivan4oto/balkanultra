@@ -4,6 +4,8 @@ import ultra2021 from "./2021ultra.json"
 import sky2021 from "./2021sky.json"
 import ultra2022 from "./2022ultra.json"
 import sky2022 from "./2022sky.json"
+import ultra2023 from "./2023ultra.json"
+import sky2023 from "./2023sky.json"
 
 // Map with results
 const resultsMap = {
@@ -11,7 +13,9 @@ const resultsMap = {
   'ultra2021': ultra2021,
   'sky2021': sky2021,
   'ultra2022': ultra2022,
-  'sky2022': sky2022
+  'sky2022': sky2022,
+  'ultra2023': ultra2023,
+  'sky2023': sky2023
 }
 
 // Function to populate table with data

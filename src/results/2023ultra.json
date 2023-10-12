@@ -1,0 +1,302 @@
+[
+  {
+    "Ranking": 1,
+    "Time": "14:07:55",
+    "Family name": "Krastev",
+    "First name": "Zdravko",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 735
+  },
+  {
+    "Ranking": 2,
+    "Time": "15:00:28",
+    "Family name": "Georgiev",
+    "First name": "Teodor",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 730
+  },
+  {
+    "Ranking": 3,
+    "Time": "15:40:52",
+    "Family name": "Todorov",
+    "First name": "Lyudmil",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 717
+  },
+  {
+    "Ranking": 4,
+    "Time": "16:04:26",
+    "Family name": "Georgiev",
+    "First name": "Tsvetin",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 732
+  },
+  {
+    "Ranking": 5,
+    "Time": "17:14:53",
+    "Family name": "Balzhiev",
+    "First name": "Plamen",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 725
+  },
+  {
+    "Ranking": 6,
+    "Time": "18:04:50",
+    "Family name": "Terziev",
+    "First name": "Petar",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 723
+  },
+  {
+    "Ranking": 7,
+    "Time": "18:18:24",
+    "Family name": "Manov",
+    "First name": "Plamen",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 726
+  },
+  {
+    "Ranking": 8,
+    "Time": "18:55:59",
+    "Family name": "St. Dimitrov",
+    "First name": "Dimitar",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 710
+  },
+  {
+    "Ranking": 9,
+    "Time": "19:40:24",
+    "Family name": "Petkanov",
+    "First name": "Hristo",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 713
+  },
+  {
+    "Ranking": 10,
+    "Time": "19:40:30",
+    "Family name": "Grudev",
+    "First name": "Hristo",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 712
+  },
+  {
+    "Ranking": 11,
+    "Time": "19:40:35",
+    "Family name": "Hristov",
+    "First name": "Peter",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 724
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Kolev",
+    "First name": "Martin",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 718
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Spasov",
+    "First name": "Aleksandar",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 701
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Toshkina",
+    "First name": "Anelia",
+    "Gender": "F",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 703
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Kuzev",
+    "First name": "Anton",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 704
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Petrov",
+    "First name": "Atanas",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 705
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Antonov",
+    "First name": "Bozhidar",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 706
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Tsvetanova",
+    "First name": "Desislava",
+    "Gender": "F",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 708
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Marinov",
+    "First name": "Dimitar",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 709
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Marinov",
+    "First name": "Galin",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 711
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Raynov",
+    "First name": "Hristo",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 714
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Genov",
+    "First name": "Lyubomir",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 716
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Ivanov",
+    "First name": "Nikolay",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 720
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Dimitrov",
+    "First name": "Petar",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 721
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Petkov",
+    "First name": "Petar",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 722
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Ivanova",
+    "First name": "Polly",
+    "Gender": "F",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 727
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Ninov",
+    "First name": "Simeon",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 728
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Stoyanov",
+    "First name": "Stoyan",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 729
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Zamfirov",
+    "First name": "Tsvetelin",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 731
+  },
+  {
+    "Ranking": "DNF",
+    "Time": "",
+    "Family name": "Dilov",
+    "First name": "Velin",
+    "Gender": "M",
+    "Birthdate": "0000-00-00",
+    "Nationality": "BUL",
+    "Bib number": 734
+  }
+]
