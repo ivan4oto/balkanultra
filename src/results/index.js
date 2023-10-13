@@ -29,6 +29,7 @@ function populateTable(data) {
       cell.textContent = value;
       row.appendChild(cell);
     });
+    row.className = item['Gender'] === 'F' ? 'female' : 'male';
 
     tableBody.appendChild(row);
   });
