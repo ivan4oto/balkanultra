@@ -6,6 +6,7 @@ from app.mail_service import SendinBlue_Mail_Service
 mail_service = SendinBlue_Mail_Service()
 
 class UltraAthlete(models.Model):
+    distance_str = "Ultra"
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
     phone = models.CharField(max_length=50)
@@ -20,8 +21,8 @@ class UltraAthlete(models.Model):
         result = mail_service.send_email(
             {"email": "balkanultra.noreply@gmail.com", "name": "Balkan Ultra"},
             [{"email": self.email, "name": self.first_name}],
-            "78",
-            [{"email": "balkanultra@abv.bg", "name": "Rosen Rusev"}]
+            [{"email": "balkanultra@abv.bg", "name": "Rosen Rusev"}],
+            athlete=self
         )
         return result
 
@@ -30,6 +31,7 @@ class UltraAthlete(models.Model):
 
 
 class SkyAthlete(models.Model):
+    distance_str = "Sky"
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
     phone = models.CharField(max_length=50)
@@ -42,8 +44,8 @@ class SkyAthlete(models.Model):
         result = mail_service.send_email(
             {"email": "balkanultra.noreply@gmail.com", "name": "Balkan Ultra"},
             [{"email": self.email, "name": self.first_name}],
-            "14",
-            [{"email": "balkanultra@abv.bg", "name": "Rosen Rusev"}]
+            [{"email": "balkanultra@abv.bg", "name": "Rosen Rusev"}],
+            athlete=self
         )
         return result
 

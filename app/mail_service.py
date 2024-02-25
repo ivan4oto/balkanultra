@@ -9,8 +9,11 @@ class SendinBlue_Mail_Service():
         self.configuration = sib_api_v3_sdk.Configuration()
         self.configuration.api_key['api-key'] = settings.SENDINBLUE_API_KEY
 
-    def send_email(self, sender, to, race_distance="", cc=None, bcc=None, reply_to=None):
-        subject = "Успешна регистрация"
+    def send_email(self, sender, to, cc=None, bcc=None, reply_to=None, athlete=None):
+        subject = "Успешна регистрация. {name} {distance}".format(
+            name=str(athlete),
+            distance=athlete.distance_str
+        )
         html_content = get_email_body()
         headers = {"Some-Custom-Name": "unique-id-1234"}
         send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(

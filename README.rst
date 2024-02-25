@@ -29,7 +29,7 @@ To run the project in dev mode make sure you've:
 - From the root directory run `docker-compose -f compose-dev/docker-compose.yml up -d`
 - Run `pip install -r requirements.txt` to install python dependencies
 - Run `python manage.py migrate` to apply the database migrations
-- Run `npm i` to install node dependencies
+- Run `npm i` to install node dependencies (make sure you use npm -v 6.14.18)
 - Run `npm run build` to build the source staticfiles
 - Run `python manage.py collectstatic` (Optional if DEVELOPMENT_MODE=False, will move staticfiles to S3 bucket)
 - Start the development server `python manage.py runserver`
