@@ -5,8 +5,8 @@ AWS_S3_REGION_NAME = 'eu-central-1'
 # AWS_S3_ENDPOINT_URL = 'https://{r}.digitaloceanspaces.com'.format(r=AWS_S3_REGION_NAME)
 
 AWS_STORAGE_BUCKET_NAME = 'balkanultra'
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_S3_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_S3_SECRET_ACCESS_KEY')
 
 # AWS_LOCATION = "https://balkanultra.fra1.digitaloceanspaces.com"
 

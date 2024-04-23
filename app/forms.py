@@ -27,7 +27,7 @@ class UltraAthleteForm(forms.ModelForm):
 class SkyAthleteForm(forms.ModelForm):
         
     captcha_answer = forms.CharField(
-        label='Колко е дълга късата ни дистанция?',  # The question to be displayed
+        label='Колко КМ дълга късата ни дистанция?',  # The question to be displayed
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Балкан Скай', 'id': 'post-captcha'})
     )
 
