@@ -118,7 +118,7 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'HOST': 'localhost',
-            'PORT': '5432',
+            'PORT': '5430',
             'NAME': 'balkanultra',
             'USER': "balkanultra",
             'PASSWORD': "postgres"

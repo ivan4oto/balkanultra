@@ -62,6 +62,12 @@ def register_view(request, race):
             return JsonResponse(
                 response
             )
+        # form invalid
+        else:
+            return JsonResponse({
+                "status": "error",
+                "error_msg": "Form validation error!"
+            })
     else:
         form = UltraAthleteForm() if race == 'ultra' else SkyAthleteForm()
 

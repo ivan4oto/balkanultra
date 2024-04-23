@@ -32,6 +32,7 @@ function get_data() {
         gender: $('#post-gender').val(),
         first_link: $('#post-first-link').val(),
         second_link: $('#post-second-link').val(),
+        captcha_answer: $('#post-captcha').val()
     }
 }
 
@@ -97,6 +98,8 @@ function addErrorMsg(json) {
     var errorMsg = json['mail_error']
     if (json['status'] == 'already exists') {
         errorMsg = 'Този email е вече регистриран, моля използвайте друг email.'
+    } else if (json['error_msg']) {
+        errorMsg = json['error_msg']
     }
     var errorMsgField = document.getElementById('errorMsgField')
     var text = document.createTextNode(`${errorMsg}`);

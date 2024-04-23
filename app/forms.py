@@ -25,6 +25,12 @@ class UltraAthleteForm(forms.ModelForm):
         }
 
 class SkyAthleteForm(forms.ModelForm):
+        
+    captcha_answer = forms.CharField(
+        label='Колко е дълга късата ни дистанция?',  # The question to be displayed
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Балкан Скай', 'id': 'post-captcha'})
+    )
+
     class Meta:
         model = SkyAthlete
         fields = [
@@ -32,7 +38,8 @@ class SkyAthleteForm(forms.ModelForm):
             'last_name',
             'email',
             'phone',
-            'gender'
+            'gender',
+            'captcha_answer'
         ]
         widgets = {
             'first_name': forms.TextInput(attrs={'class': "form-control", 'id': 'post-first-name', 'placeholder': 'Име'}),
@@ -41,3 +48,11 @@ class SkyAthleteForm(forms.ModelForm):
             'phone': forms.TextInput(attrs={'class': "form-control", 'id': 'post-phone','placeholder': 'Телефон'}),
             'gender': forms.Select(attrs={'class': 'form-select', 'id': 'post-gender'}, choices=[('male', 'Мъж'), ('female', 'Жена')])
         }
+
+    def clean_captcha_answer(self):
+        answer = self.cleaned_data.get('captcha_answer')
+        answer = int(answer)
+        # answer is 14 but if its in the 12-16 range we'll still let the user
+        if answer//2 >= 6 and answer//2 <= 8:
+            return answer
+        raise forms.ValidationError('Incorrect answer. Please try again.')
