@@ -1,0 +1,479 @@
+[
+  {
+    "Ranking": 1,
+    "Time": "01:56:52",
+    "Family name": "Minkov",
+    "First name": "Hristo",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 127
+  },
+  {
+    "Ranking": 2,
+    "Time": "02:02:01",
+    "Family name": "Popov",
+    "First name": "Evgeniy",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 114
+  },
+  {
+    "Ranking": 3,
+    "Time": "02:11:19",
+    "Family name": "Peychev",
+    "First name": "Kaloyan",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 137
+  },
+  {
+    "Ranking": 4,
+    "Time": "02:14:46",
+    "Family name": "Krastev",
+    "First name": "Zdravko",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 182
+  },
+  {
+    "Ranking": 5,
+    "Time": "02:18:47",
+    "Family name": "Elenski",
+    "First name": "Milko",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 146
+  },
+  {
+    "Ranking": 6,
+    "Time": "02:26:50",
+    "Family name": "Minkov",
+    "First name": "Pavlin",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 156
+  },
+  {
+    "Ranking": 7,
+    "Time": "02:29:35",
+    "Family name": "Gaytandzhiev",
+    "First name": "Mladen",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 147
+  },
+  {
+    "Ranking": 8,
+    "Time": "02:32:54",
+    "Family name": "Stefanov",
+    "First name": "Georgi",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 122
+  },
+  {
+    "Ranking": 9,
+    "Time": "02:38:51",
+    "Family name": "Tomchev",
+    "First name": "Svetomir",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 157
+  },
+  {
+    "Ranking": 10,
+    "Time": "02:39:06",
+    "Family name": "Todorov",
+    "First name": "Georgi",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 123
+  },
+  {
+    "Ranking": 11,
+    "Time": "02:41:58",
+    "Family name": "Bozhkova",
+    "First name": "Gergana",
+    "Gender": "F",
+    "Nationality": "BUL",
+    "Bib number": 124
+  },
+  {
+    "Ranking": 12,
+    "Time": "02:49:58",
+    "Family name": "Tonchev",
+    "First name": "Milen",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 158
+  },
+  {
+    "Ranking": 13,
+    "Time": "02:50:44",
+    "Family name": "Minkov",
+    "First name": "Stanimir",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 165
+  },
+  {
+    "Ranking": 14,
+    "Time": "02:51:32",
+    "Family name": "Dimitrov",
+    "First name": "Rumen",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 161
+  },
+  {
+    "Ranking": 15,
+    "Time": "02:52:59",
+    "Family name": "Ivov",
+    "First name": "Ivo",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 134
+  },
+  {
+    "Ranking": 16,
+    "Time": "02:56:52",
+    "Family name": "Kostov",
+    "First name": "Yancho",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 177
+  },
+  {
+    "Ranking": 17,
+    "Time": "02:57:27",
+    "Family name": "Krastev",
+    "First name": "Galin",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 116
+  },
+  {
+    "Ranking": 18,
+    "Time": "02:58:47",
+    "Family name": "Nenov",
+    "First name": "Svetlozar",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 167
+  },
+  {
+    "Ranking": 19,
+    "Time": "03:00:21",
+    "Family name": "Lenkov",
+    "First name": "Stanislav",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 166
+  },
+  {
+    "Ranking": 20,
+    "Time": "03:02:35",
+    "Family name": "Dimitrov",
+    "First name": "Nyagol",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 153
+  },
+  {
+    "Ranking": 21,
+    "Time": "03:09:11",
+    "Family name": "Anastasov",
+    "First name": "Krasimir",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 141
+  },
+  {
+    "Ranking": 22,
+    "Time": "03:09:25",
+    "Family name": "Stefanov",
+    "First name": "Nikolay",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 152
+  },
+  {
+    "Ranking": 23,
+    "Time": "03:16:56",
+    "Family name": "Stoyanova",
+    "First name": "Milena",
+    "Gender": "F",
+    "Nationality": "BUL",
+    "Bib number": 145
+  },
+  {
+    "Ranking": 24,
+    "Time": "03:18:08",
+    "Family name": "Nemski",
+    "First name": "Borislav",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 110
+  },
+  {
+    "Ranking": 25,
+    "Time": "03:20:49",
+    "Family name": "Genchev",
+    "First name": "Dimitar",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 111
+  },
+  {
+    "Ranking": 26,
+    "Time": "03:22:27",
+    "Family name": "Proynov",
+    "First name": "Pavel",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 155
+  },
+  {
+    "Ranking": 27,
+    "Time": "03:27:37",
+    "Family name": "Ivanova",
+    "First name": "Aleksandra",
+    "Gender": "F",
+    "Nationality": "BUL",
+    "Bib number": 104
+  },
+  {
+    "Ranking": 28,
+    "Time": "03:27:47",
+    "Family name": "Ivanova",
+    "First name": "Mariyana",
+    "Gender": "F",
+    "Nationality": "BUL",
+    "Bib number": 143
+  },
+  {
+    "Ranking": 29,
+    "Time": "03:29:51",
+    "Family name": "Blagoev",
+    "First name": "Yonko",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 178
+  },
+  {
+    "Ranking": 30,
+    "Time": "03:30:15",
+    "Family name": "Nikolov",
+    "First name": "Danil",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 149
+  },
+  {
+    "Ranking": 31,
+    "Time": "03:31:51",
+    "Family name": "Penev",
+    "First name": "Georgi",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 120
+  },
+  {
+    "Ranking": 32,
+    "Time": "03:35:14",
+    "Family name": "Karagyozyan",
+    "First name": "Aneliya",
+    "Gender": "F",
+    "Nationality": "BUL",
+    "Bib number": 108
+  },
+  {
+    "Ranking": 33,
+    "Time": "03:41:12",
+    "Family name": "Petkov",
+    "First name": "Georgi",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 121
+  },
+  {
+    "Ranking": 34,
+    "Time": "03:49:24",
+    "Family name": "Dobrev",
+    "First name": "Stanil",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 164
+  },
+  {
+    "Ranking": 35,
+    "Time": "04:08:49",
+    "Family name": "Kostadinova",
+    "First name": "Trayana",
+    "Gender": "F",
+    "Nationality": "BUL",
+    "Bib number": 171
+  },
+  {
+    "Ranking": 36,
+    "Time": "04:08:56",
+    "Family name": "Petrov",
+    "First name": "Genadi",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 117
+  },
+  {
+    "Ranking": 37,
+    "Time": "04:09:48",
+    "Family name": "Dzhindzhev",
+    "First name": "Doncho",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 112
+  },
+  {
+    "Ranking": 38,
+    "Time": "04:12:36",
+    "Family name": "Evtimov",
+    "First name": "Kaloyan",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 136
+  },
+  {
+    "Ranking": 39,
+    "Time": "04:12:39",
+    "Family name": "Ivanova",
+    "First name": "Iliyana",
+    "Gender": "F",
+    "Nationality": "BUL",
+    "Bib number": 133
+  },
+  {
+    "Ranking": 40,
+    "Time": "04:13:58",
+    "Family name": "Bojev",
+    "First name": "Georgi",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 118
+  },
+  {
+    "Ranking": 41,
+    "Time": "04:15:02",
+    "Family name": "Bobchev",
+    "First name": "Rosen",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 160
+  },
+  {
+    "Ranking": 42,
+    "Time": "04:15:22",
+    "Family name": "Bolyarov",
+    "First name": "Nikolay",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 151
+  },
+  {
+    "Ranking": 43,
+    "Time": "04:19:43",
+    "Family name": "Donev",
+    "First name": "Ivaylo",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 131
+  },
+  {
+    "Ranking": 44,
+    "Time": "04:27:15",
+    "Family name": "Peshev",
+    "First name": "Alexandar",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 106
+  },
+  {
+    "Ranking": 45,
+    "Time": "04:33:06",
+    "Family name": "Iliev",
+    "First name": "Vladimir",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 168
+  },
+  {
+    "Ranking": 46,
+    "Time": "04:35:45",
+    "Family name": "Borisova",
+    "First name": "Kristina",
+    "Gender": "F",
+    "Nationality": "BUL",
+    "Bib number": 142
+  },
+  {
+    "Ranking": 47,
+    "Time": "04:35:50",
+    "Family name": "Bebov",
+    "First name": "Valentin",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 173
+  },
+  {
+    "Ranking": 48,
+    "Time": "04:39:10",
+    "Family name": "Pavlov",
+    "First name": "David",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 169
+  },
+  {
+    "Ranking": 49,
+    "Time": "04:49:07",
+    "Family name": "Vangelov",
+    "First name": "Konstantin",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 140
+  },
+  {
+    "Ranking": 50,
+    "Time": "04:50:58",
+    "Family name": "Dimitrov",
+    "First name": "Ivaylo",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 130
+  },
+  {
+    "Ranking": 51,
+    "Time": "04:51:08",
+    "Family name": "Blazhev",
+    "First name": "Kalin",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 135
+  },
+  {
+    "Ranking": 52,
+    "Time": "04:57:56",
+    "Family name": "Georgiev",
+    "First name": "Ivaylo",
+    "Gender": "M",
+    "Nationality": "BUL",
+    "Bib number": 181
+  },
+  {
+    "Ranking": 53,
+    "Time": "05:15:11",
+    "Family name": "Dimitrova",
+    "First name": "Viktoria",
+    "Gender": "F",
+    "Nationality": "BUL",
+    "Bib number": 176
+  }
+]
