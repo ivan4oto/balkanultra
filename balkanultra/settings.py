@@ -194,7 +194,7 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 SKY_GPX_LINK = "https://balkanultra.s3.eu-central-1.amazonaws.com/media/Balkan+Ultra+Sky.gpx"
 ULTRA_GPX_LINK = "https://balkanultra.s3.eu-central-1.amazonaws.com/media/Balkan+Ultra+Long.gpx"
 
-REGISTRATION_ENABLED = False
+REGISTRATION_ENABLED = True
 
 
 from .cdn.conf import *
