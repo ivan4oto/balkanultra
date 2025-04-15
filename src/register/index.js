@@ -95,13 +95,16 @@ function showModal(json) {
 }
 
 function addErrorMsg(json) {
-    var errorMsg = json['mail_error']
+    let errorMsg = '';
     if (json['status'] == 'already exists') {
-        errorMsg = 'Този email е вече регистриран, моля използвайте друг email.'
-    } else if (json['error_msg']) {
-        errorMsg = json['error_msg']
+        errorMsg = 'Този email е вече регистриран, моля използвайте друг email.';
+    } else if (json['mail_status'] == 'error') {
+        errorMsg = 'Error sending confirmation mail. Please contact Race Directors. Thank you!';
     }
-    var errorMsgField = document.getElementById('errorMsgField')
+     else if (json['error_msg']) {
+        errorMsg = json['error_msg'];
+    }
+    var errorMsgField = document.getElementById('errorMsgField');
     var text = document.createTextNode(`${errorMsg}`);
     errorMsgField.appendChild(text);
 }
