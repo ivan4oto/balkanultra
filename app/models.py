@@ -52,3 +52,28 @@ class SkyAthlete(models.Model):
 
     def __str__(self):
         return str(self.first_name) + ' ' + str(self.last_name)
+
+
+class Athlete(models.Model):
+    first_name = models.CharField(max_length=25, default="")
+    last_name = models.CharField(max_length=25, default="")
+    gender = models.CharField(max_length=25, default="M")
+    year_of_birth = models.PositiveIntegerField()
+    phone_number = models.CharField(max_length=20, default="")
+    nationality = models.CharField(max_length=20, default="BG")
+
+    def __str__(self):
+        return str(self.first_name) + ' ' + str(self.last_name)
+
+class Result(models.Model):
+    athlete = models.ForeignKey(Athlete, on_delete=models.CASCADE, related_name='results')
+    year = models.PositiveIntegerField()
+    distance = models.FloatField(help_text="Distance in kilometers")
+    result_time = models.DurationField(null=True, help_text="Time taken for the result (e.g., hours, minutes, seconds)")
+    position = models.PositiveIntegerField(null=True, default=0)
+
+    def __str__(self):
+        return f"{self.year} - {self.distance}km: {self.result_time}"
+    
+    class Meta:
+        ordering = ['-year']

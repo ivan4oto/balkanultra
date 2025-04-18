@@ -1,7 +1,8 @@
 import csv
 from django.contrib import admin
 from django.http import HttpResponse
-from app.models import UltraAthlete, SkyAthlete
+from app.models import UltraAthlete, SkyAthlete, Athlete, Result
+
 
 # Register your models here.
 
@@ -27,3 +28,6 @@ class AuthorAdmin(admin.ModelAdmin):
 @admin.register(UltraAthlete)
 class AuthorAdmin(admin.ModelAdmin):
     actions = [export_as_csv]
+
+admin.site.register(Athlete)
+admin.site.register(Result)

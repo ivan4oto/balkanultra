@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% block head %}
- <link rel='stylesheet' href="{% static 'results.css' %}">
+  <link rel='stylesheet' href="{% static 'results.css' %}">
+  <script type="text/javascript">
+    var host = "{{ host }}"
+    var scheme = "{{ scheme }}"
+  </script>
 {% endblock %}
 {% block content %}
 <div class='container mt-3' id='results-container' data-static-path="{% static 'balkanultra/' %}">
@@ -20,8 +24,8 @@
     <div class="col-md-6">
       <label for="type-select">Избери Дистанция:</label>
       <select class="form-select" id="type-select">
-        <option value="ultra">Ultra</option>
-        <option value="sky">Sky</option>
+        <option value="78">Ultra</option>
+        <option value="14">Sky</option>
       </select>
     </div>
   </div>

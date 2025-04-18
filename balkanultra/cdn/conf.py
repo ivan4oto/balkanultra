@@ -17,8 +17,8 @@ STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
 DEFAULT_FILE_STORAGE = "balkanultra.cdn.backends.MediaRootS3Boto3Storage"
 STATICFILES_STORAGE = "balkanultra.cdn.backends.StaticRootS3Boto3Storage"
 
-if os.getenv("DEVELOPMENT_MODE", "False") == "True":
-    STATIC_URL='/dist/'
-    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
-    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+# if os.getenv("DEVELOPMENT_MODE", "False") == "True":
+#     STATIC_URL='/dist/'
+#     DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+#     STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 

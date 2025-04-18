@@ -48,6 +48,22 @@ function clearTable() {
   }
 }
 
+async function getDataForDistanceAndYear() {
+  const year = document.getElementById("year-select").value;
+  const type = document.getElementById("type-select").value;
+  $.ajax({
+    url: `${scheme}://${host}/athletes/year/${year}/distance/${type}/`,
+    method: 'GET',
+    success: function(response) {
+        clearTable();
+        populateTable(response['athletes']);
+    },
+    error: function(xhr, status, error) {
+        console.log(error);
+    }
+  })
+}
+
 // Function to update the table with the selected data
 async function updateTable() {
   const year = document.getElementById("year-select").value;
@@ -65,8 +81,9 @@ async function updateTable() {
 }
 
 // Add event listeners to the dropdowns
-document.getElementById("year-select").addEventListener("change", updateTable);
-document.getElementById("type-select").addEventListener("change", updateTable);
+document.getElementById("year-select").addEventListener("change", getDataForDistanceAndYear);
+document.getElementById("type-select").addEventListener("change", getDataForDistanceAndYear);
 
 // Call the function to load the initial data and populate the table
 updateTable();
+getDataForDistanceAndYear();

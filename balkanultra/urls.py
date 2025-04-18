@@ -25,5 +25,7 @@ urlpatterns = [
     path('results/<str:type>', results_view, name='results'),
     path('register/<str:race>', register_view, name='register'),
     path('download/<str:race>', download_gpx_view, name='download'),
-    path('athletes', athletes_view, name='athletes')
+    path('athletes', athletes_view, name='athletes'),
+    path('hall-of-fame', hall_of_fame_view, name='hall-of-fame'),
+    path('athletes/year/<int:year>/distance/<int:distance>/', athletes_by_year_distance, name='athletes_by_year_distance')
 ]

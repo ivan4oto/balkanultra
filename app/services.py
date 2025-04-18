@@ -10,6 +10,11 @@ from django.core.files.storage import default_storage
 absolute_path = 'app/static/{year}{race}.json'
 
 
+def is_string_numeric(var):
+    if isinstance(var, str):
+        return var.replace(".", "").replace("-", "").isdigit()  # Handles integers and decimals
+    return False
+
 def join_results(path_mapping):
     results = {}
     for year, races in path_mapping.items():

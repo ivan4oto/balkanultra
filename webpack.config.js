@@ -10,7 +10,8 @@ module.exports = {
         register: './src/register/index.js',
         results: './src/results/index.js',
         athletes: './src/athletes/index.js',
-        about: './src/about/index.js'
+        about: './src/about/index.js',
+        hall_of_fame: './src/hall_of_fame/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

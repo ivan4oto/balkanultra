@@ -1,5 +1,6 @@
 from django import forms
 from .models import UltraAthlete, SkyAthlete
+from .services import is_string_numeric
 
 
 class UltraAthleteForm(forms.ModelForm):
@@ -49,14 +50,10 @@ class SkyAthleteForm(forms.ModelForm):
             'gender': forms.Select(attrs={'class': 'form-select', 'id': 'post-gender'}, choices=[('male', 'Мъж'), ('female', 'Жена')])
         }
 
-    def is_string_numeric(self, var):
-        if isinstance(var, str):
-            return var.replace(".", "").replace("-", "").isdigit()  # Handles integers and decimals
-        return False
 
     def clean_captcha_answer(self):
         answer = self.cleaned_data.get('captcha_answer')
-        if self.is_string_numeric(answer):
+        if is_string_numeric(answer):
             answer = int(answer)
             # answer is 14 but if its in the 12-16 range we'll still let the user
             if answer//2 >= 6 and answer//2 <= 8:
