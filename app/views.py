@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.db.models import Count
+from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_protect
 from django.http import HttpResponse, JsonResponse
 from .forms import UltraAthleteForm, SkyAthleteForm
@@ -134,5 +135,51 @@ def athletes_by_year_distance(request, year, distance):
 
     return JsonResponse(response_data, safe=False)  # safe=False allows non-dict objects
 
+def athlete_results(request, first_name, last_name):
+    athlete = get_object_or_404(Athlete, first_name=first_name, last_name=last_name)
+    results = athlete.results.all().values(
+        'year', 'distance', 'result_time', 'position'
+    )
+    return JsonResponse({
+        'athlete': f"{athlete.first_name} {athlete.last_name}",
+        'results': list(results)
+    })
+
 def hall_of_fame_view(request):
-    return render(request, "hall_of_fame.html")
+    return render(request, "hall_of_fame.html", {
+            'scheme': request.scheme,
+            'host': request.get_host()
+        })
+
+
+def top_athletes_by_participations(request):
+    distance = request.GET.get('distance')
+
+    if not distance:
+        return JsonResponse({'error': 'Distance parameter is required'}, status=400)
+
+    try:
+        distance = float(distance)
+    except ValueError:
+        return JsonResponse({'error': 'Distance must be a valid number'}, status=400)
+
+    # Query to find athletes with most participations for the given distance
+    top_athletes = Athlete.objects.filter(
+        results__distance=distance
+    ).annotate(
+        participations=Count('results')
+    ).order_by(
+        '-participations'
+    )[:10]
+
+    # Format the results
+    result_data = [
+        {
+            'first_name': athlete.first_name,
+            'last_name': athlete.last_name,
+            'participations': athlete.participations
+        }
+        for athlete in top_athletes
+    ]
+
+    return JsonResponse(result_data, safe=False)

@@ -1,9 +1,11 @@
 from django.db import models
-from app.mail_service import SendinBlue_Mail_Service
+from django.template.defaultfilters import default
 
+from app.mail_service import SendinBlue_Mail_Service
 
 # Create your models here.
 mail_service = SendinBlue_Mail_Service()
+
 
 class UltraAthlete(models.Model):
     distance_str = "Ultra"
@@ -49,7 +51,6 @@ class SkyAthlete(models.Model):
         )
         return result
 
-
     def __str__(self):
         return str(self.first_name) + ' ' + str(self.last_name)
 
@@ -57,6 +58,8 @@ class SkyAthlete(models.Model):
 class Athlete(models.Model):
     first_name = models.CharField(max_length=25, default="")
     last_name = models.CharField(max_length=25, default="")
+    nickname = models.CharField(max_length=25, default="", blank=True, null=True,
+                                help_text="Standardized name for grouping athletes who wrote their name differently through the years")
     gender = models.CharField(max_length=25, default="M")
     year_of_birth = models.PositiveIntegerField()
     phone_number = models.CharField(max_length=20, default="")
@@ -64,6 +67,9 @@ class Athlete(models.Model):
 
     def __str__(self):
         return str(self.first_name) + ' ' + str(self.last_name)
+
+    def get_name(self):
+        return self.nickname if self.nickname else f"{self.first_name} {self.last_name}"
 
 class Result(models.Model):
     athlete = models.ForeignKey(Athlete, on_delete=models.CASCADE, related_name='results')
@@ -74,6 +80,6 @@ class Result(models.Model):
 
     def __str__(self):
         return f"{self.year} - {self.distance}km: {self.result_time}"
-    
+
     class Meta:
         ordering = ['-year']

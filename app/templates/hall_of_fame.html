@@ -2,12 +2,30 @@
 {% load static %}
 {% block head %}
     <link rel='stylesheet' href="{% static 'hall_of_fame.css' %}">
+    <script type="text/javascript">
+        var host = "{{ host }}"
+        var scheme = "{{ scheme }}"
+    </script>
 {% endblock %}
 
 {% block content %}
 
 <div class='container'>
 <h2>Soon...</h2>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Participations</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+</div>
+
 </div>
 {% endblock %}
 {% block js %}
